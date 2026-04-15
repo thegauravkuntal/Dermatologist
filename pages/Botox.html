@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="hi-IN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botox Treatment | Smooth Wrinkles & Anti-Aging Solutions</title>
+    <meta name="description" content="Get professional Botox treatments to reduce forehead lines, frown lines, and crow's feet. Quick 10-minute procedure with 3-4 months of lasting results.">
+    <script src="https://cdn.tailwindcss.com"></script>
+            <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .feature-dot { position: relative; padding-left: 2rem; }
+                 [x-cloak] { display: none !important; }
+        .feature-dot::before { content: '✦'; position: absolute; left: 0; color: #10b981; font-weight: bold; }
+        .logo-fix {
+  height: 60px;              /* logo bada */
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0);     /* dark */
+  transform: scale(1.2);     /* visually bada */
+  transform-origin: left center;
+}
+    </style>
+</head>
+<body class="bg-white text-slate-900">
+   <header class="sticky top-0 z-50 bg-white shadow-md" x-data="{ mobileMenuOpen: false, activeDropdown: null }">
+
+    <nav class="max-w-[1400px] mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+
+            <!-- LOGO -->
+            <a href="/" class="flex items-center overflow-hidden">
+               <img src="/imgs/logo.webp"
+     class="h-14 w-auto object-contain brightness-0 contrast-200 scale-125 origin-left"
+     alt="Logo">
+            </a>
+
+            <!-- DESKTOP MENU -->
+            <div class="hidden xl:flex items-center space-x-3">
+
+                <a href="/index.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">Home</a>
+                <a href="/pages/about.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">About</a>
+
+                <!-- DROPDOWN -->
+                <div class="relative" @mouseenter="activeDropdown = 'concerns'" @mouseleave="activeDropdown = null">
+
+                   <button class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">
+    Concerns
+
+    <svg 
+        class="w-5 h-5 transition-transform duration-200"
+        :class="activeDropdown === 'concerns' ? 'rotate-180' : ''"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24">
+
+        <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M19 9l-7 7-7-7" />
+
+    </svg>
+</button>
+
+                    <div x-show="activeDropdown === 'concerns'" x-cloak
+                         class="absolute left-0 top-full mt-1 w-52 bg-white rounded-lg shadow-lg py-2">
+
+                        <a href="/pages/skin.html" class="block px-4 py-2 text-sm hover:bg-[#fbeeee]">Skin</a>
+                        <a href="/pages/anti-aging.html" class="block px-4 py-2 text-sm hover:bg-[#fbeeee]">Anti Ageing</a>
+                        <a href="/pages/hair.html" class="block px-4 py-2 text-sm hover:bg-[#fbeeee]">Hair</a>
+                        <a href="/pages/body.html" class="block px-4 py-2 text-sm hover:bg-[#fbeeee]">Body</a>
+                        <a href="/pages/men.html" class="block px-4 py-2 text-sm hover:bg-[#fbeeee]">Men</a>
+
+                    </div>
+                </div>
+
+                <a href="/pages/tretment.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">Treatments</a>
+                <a href="/pages/suplyment.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">Supplements</a>
+                <a href="/pages/blog.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">Blog</a>
+                <a href="/pages/service.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">Services</a>
+
+            </div>
+
+            <!-- CONTACT -->
+            <div class="hidden xl:block">
+                <a href="/pages/contact.html"
+                   class="bg-[#c97c74] text-white px-5 py-2 rounded-full text-sm font-semibold hover:opacity-90">
+                    Contact Us
+                </a>
+            </div>
+
+            <!-- HAMBURGER -->
+            <button @click="mobileMenuOpen = true" class="xl:hidden p-2">
+                <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor">
+                    <path stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                </svg>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div x-show="mobileMenuOpen" x-cloak class="fixed inset-0 z-50 xl:hidden">
+
+        <div class="absolute inset-0 bg-black/50" @click="mobileMenuOpen = false"></div>
+
+        <div class="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-white p-6 overflow-y-auto">
+
+            <!-- HEADER -->
+            <div class="flex justify-between items-center mb-6">
+                <img src="/imgs/logo.webp" class="h-10 brightness-0">
+                <button @click="mobileMenuOpen = false" class="text-xl">✕</button>
+            </div>
+
+            <!-- LINKS -->
+            <a href="/index.html" class="block py-3 border-b text-base">Home</a>
+            <a href="/pages/about.html" class="block py-3 border-b text-base">About</a>
+            <!-- DROPDOWN -->
+            <div x-data="{ open: false }">
+                <button @click="open = !open" class="flex justify-between w-full py-3 border-b text-base">
+                    Concerns
+                    <span>▼</span>
+                </button>
+
+                <div x-show="open" class="pl-4">
+                    <a href="/pages/skin.html" class="block py-2">Skin</a>
+                    <a href="/pages/anti-aging.html" class="block py-2">Anti Ageing</a>
+                    <a href="/pages/hair.html" class="block py-2">Hair</a>
+                    <a href="/pages/body.html" class="block py-2">Body</a>
+                    <a href="/pages/men.html" class="block py-2">Men</a>
+                </div>
+            </div>
+
+            <a href="/pages/tretment.html" class="block py-3 border-b">Treatments</a>
+            <a href="/pages/suplyment.html" class="block py-3 border-b">Supplements</a>
+            <a href="/pages/blog.html" class="block py-3 border-b">Blog</a>
+            <a href="/pages/service.html" class="block py-3 border-b">Services</a>
+            <a href="/pages/contact.html" class="block py-3 border-b">Contact</a>
+
+        </div>
+    </div>
+
+</header>
+
+  <section class="relative h-[55vh] flex items-center justify-center overflow-hidden">
+
+    <!-- BACKGROUND -->
+    <div class="absolute inset-0 z-0">
+        <img src="/imgs/botox.webp" 
+             alt="Botox Treatment Background" 
+             class="w-full h-full object-cover">
+
+        <!-- LIGHT OVERLAY -->
+        <div class="absolute inset-0 bg-black/30"></div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="container mx-auto px-6 relative z-10 text-center text-white">
+
+        <!-- TAG -->
+        <span class="inline-block px-5 py-2 bg-white/80 text-[#c97c74] rounded-full text-xs font-semibold tracking-[0.2em] uppercase mb-6">
+            Aesthetics Excellence
+        </span>
+
+        <!-- HEADING -->
+        <h1 class="text-5xl md:text-7xl font-bold mb-6">
+            What is <span class="text-[#ffdede]">Botox®?</span>
+        </h1>
+
+        <!-- TEXT -->
+        <p class="text-lg md:text-xl max-w-2xl mx-auto font-medium text-white/90 leading-relaxed">
+            A purified protein that relaxes muscles to reduce wrinkles and prevent new lines.
+        </p>
+
+    </div>
+
+</section>
+
+   <section class="py-24 bg-[#fff7f6]">
+    <div class="container mx-auto px-6">
+
+        <div class="max-w-4xl mx-auto text-center">
+
+            <!-- HEADING -->
+            <h2 class="text-3xl md:text-5xl font-bold mb-8 tracking-tight text-gray-900">
+                Smooth. Prevent. <span class="text-[#c97c74]">Refresh.</span>
+            </h2>
+
+            <!-- TEXT -->
+            <p class="text-lg md:text-xl text-gray-600 leading-relaxed mb-12">
+                Botox® ek purified protein hai jo targeted facial muscles ko relax karta hai. 
+                Isse na sirf purani jhurriyan (wrinkles) kam hoti hain, balki naye lines banne se bhi rukti hain. 
+                Ye treatment fast hai aur isme downtime bilkul nahi hai.
+            </p>
+
+            <!-- CARDS -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- CARD -->
+                <div class="p-8 bg-white rounded-[2.5rem] border border-[#f1d5d2] shadow-md hover:shadow-xl transition duration-500">
+                    
+                    <div class="text-[#c97c74] font-bold text-3xl mb-2">
+                        Quick
+                    </div>
+
+                    <p class="text-gray-500 text-sm">
+                        Minimally Invasive Treatment
+                    </p>
+
+                </div>
+
+                <!-- CARD -->
+                <div class="p-8 bg-white rounded-[2.5rem] border border-[#f1d5d2] shadow-md hover:shadow-xl transition duration-500">
+                    
+                    <div class="text-[#c97c74] font-bold text-3xl mb-2">
+                        Zero
+                    </div>
+
+                    <p class="text-gray-500 text-sm">
+                        No Downtime Required
+                    </p>
+
+                </div>
+
+                <!-- CARD -->
+                <div class="p-8 bg-white rounded-[2.5rem] border border-[#f1d5d2] shadow-md hover:shadow-xl transition duration-500">
+                    
+                    <div class="text-[#c97c74] font-bold text-3xl mb-2">
+                        Proven
+                    </div>
+
+                    <p class="text-gray-500 text-sm">
+                        Safe & FDA Approved
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+  <section class="py-24 bg-[#fff7f6] mx-4 rounded-[3rem]">
+    <div class="container mx-auto px-6">
+
+        <!-- HEADING -->
+        <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center text-gray-900">
+            What can it <span class="text-[#c97c74]">treat?</span>
+        </h2>
+
+        <!-- GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- ITEM -->
+            <div class="flex items-center gap-3 bg-white p-4 rounded-2xl border border-[#f1d5d2] shadow-sm">
+                <span class="text-[#c97c74]">✔</span>
+                <p class="text-gray-700 font-medium">Forehead lines</p>
+            </div>
+
+            <div class="flex items-center gap-3 bg-white p-4 rounded-2xl border border-[#f1d5d2] shadow-sm">
+                <span class="text-[#c97c74]">✔</span>
+                <p class="text-gray-700 font-medium">Frown lines (Between eyebrows)</p>
+            </div>
+
+            <div class="flex items-center gap-3 bg-white p-4 rounded-2xl border border-[#f1d5d2] shadow-sm">
+                <span class="text-[#c97c74]">✔</span>
+                <p class="text-gray-700 font-medium">Crow’s feet (Around eyes)</p>
+            </div>
+
+            <div class="flex items-center gap-3 bg-white p-4 rounded-2xl border border-[#f1d5d2] shadow-sm">
+                <span class="text-[#c97c74]">✔</span>
+                <p class="text-gray-700 font-medium">Bunny lines (Nose wrinkles)</p>
+            </div>
+
+            <div class="flex items-center gap-3 bg-white p-4 rounded-2xl border border-[#f1d5d2] shadow-sm">
+                <span class="text-[#c97c74]">✔</span>
+                <p class="text-gray-700 font-medium">Lip lines & Gummy smile</p>
+            </div>
+
+            <div class="flex items-center gap-3 bg-white p-4 rounded-2xl border border-[#f1d5d2] shadow-sm">
+                <span class="text-[#c97c74]">✔</span>
+                <p class="text-gray-700 font-medium">Downturned mouth & Chin dimpling</p>
+            </div>
+
+            <div class="flex items-center gap-3 bg-white p-4 rounded-2xl border border-[#f1d5d2] shadow-sm">
+                <span class="text-[#c97c74]">✔</span>
+                <p class="text-gray-700 font-medium">Jaw slimming (Masseter)</p>
+            </div>
+
+            <div class="flex items-center gap-3 bg-white p-4 rounded-2xl border border-[#f1d5d2] shadow-sm">
+                <span class="text-[#c97c74]">✔</span>
+                <p class="text-gray-700 font-medium">Teeth grinding (Bruxism)</p>
+            </div>
+
+            <div class="flex items-center gap-3 bg-white p-4 rounded-2xl border border-[#f1d5d2] shadow-sm">
+                <span class="text-[#c97c74]">✔</span>
+                <p class="text-gray-700 font-medium">Neck bands (Platysma)</p>
+            </div>
+
+            <!-- HIGHLIGHT -->
+            <div class="flex items-center gap-3 bg-[#fbeeee] p-4 rounded-2xl border border-[#c97c74] shadow-sm">
+                <span class="text-[#c97c74]">✔</span>
+                <p class="text-gray-800 font-semibold">
+                    Excessive sweating (Underarms, Hands, Feet)
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+   <section class="py-24 bg-[#fff7f6]">
+    <div class="container mx-auto px-6">
+
+        <div class="max-w-5xl mx-auto">
+
+            <!-- HEADING -->
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center text-gray-900">
+                Treatment <span class="text-[#c97c74]">Expectations</span>
+            </h2>
+
+            <!-- GRID -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- CARD -->
+                <div class="text-center p-8 bg-white rounded-2xl border border-[#f1d5d2] shadow-md hover:shadow-xl transition duration-500">
+                    
+                    <div class="text-[#c97c74] text-4xl font-bold mb-4">
+                        10–20
+                    </div>
+
+                    <h4 class="font-semibold text-gray-900">
+                        Minutes
+                    </h4>
+
+                    <p class="text-gray-500 text-sm mt-2">
+                        Treatment Time
+                    </p>
+
+                </div>
+
+                <!-- CARD -->
+                <div class="text-center p-8 bg-white rounded-2xl border border-[#f1d5d2] shadow-md hover:shadow-xl transition duration-500">
+                    
+                    <div class="text-[#c97c74] text-4xl font-bold mb-4">
+                        3–5
+                    </div>
+
+                    <h4 class="font-semibold text-gray-900">
+                        Days
+                    </h4>
+
+                    <p class="text-gray-500 text-sm mt-2">
+                        Onset of Results
+                    </p>
+
+                </div>
+
+                <!-- CARD -->
+                <div class="text-center p-8 bg-white rounded-2xl border border-[#f1d5d2] shadow-md hover:shadow-xl transition duration-500">
+                    
+                    <div class="text-[#c97c74] text-4xl font-bold mb-4">
+                        10–14
+                    </div>
+
+                    <h4 class="font-semibold text-gray-900">
+                        Days
+                    </h4>
+
+                    <p class="text-gray-500 text-sm mt-2">
+                        Full Visual Effect
+                    </p>
+
+                </div>
+
+                <!-- CARD -->
+                <div class="text-center p-8 bg-white rounded-2xl border border-[#f1d5d2] shadow-md hover:shadow-xl transition duration-500">
+                    
+                    <div class="text-[#c97c74] text-4xl font-bold mb-4">
+                        3–4
+                    </div>
+
+                    <h4 class="font-semibold text-gray-900">
+                        Months
+                    </h4>
+
+                    <p class="text-gray-500 text-sm mt-2">
+                        Duration of Effect
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+   <section class="py-20 bg-[#fff7f6]">
+    <div class="container mx-auto px-6">
+
+        <div class="bg-[#fbeeee] rounded-[3rem] p-12 md:p-16 text-center relative overflow-hidden border border-[#f1d5d2] shadow-xl">
+
+            <!-- CONTENT -->
+            <div class="relative z-10">
+
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                    Ready for a <br>
+                    <span class="text-[#c97c74]">Fresher Look?</span>
+                </h2>
+
+                <p class="text-gray-500 mb-10 max-w-xl mx-auto">
+                    Expert care ke saath Botox® treatment ab aur bhi aasaan. 
+                    Aaj hi apna consultation book karein.
+                </p>
+
+                <!-- BUTTON -->
+                <div class="flex justify-center">
+                    <button class="bg-[#c97c74] hover:bg-[#b86b64] text-white px-10 py-4 rounded-full font-semibold shadow-md transition">
+                        Book Appointment Now
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- SOFT GLOW -->
+            <div class="absolute -top-16 -left-16 w-72 h-72 bg-[#c97c74]/20 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-16 -right-16 w-72 h-72 bg-[#f5c5bf]/30 rounded-full blur-3xl"></div>
+
+        </div>
+
+    </div>
+</section>
+   <footer class="bg-[#0f172a] text-white pt-20 pb-10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-20">
+
+    <!-- TOP GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+      <!-- BRAND -->
+      <div class="space-y-6">
+        <img src="/imgs/logo.webp" class="h-10">
+
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Expert dermatological care focused on rejuvenating your natural beauty. 
+          Delivering advanced skin solutions with precision and care.
+        </p>
+
+        <!-- SOCIAL -->
+        <div class="flex gap-4">
+
+  <!-- Twitter -->
+  <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#dba39c] transition">
+    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M22 5.8c-.7.3-1.5.5-2.2.6.8-.5 1.4-1.3 1.7-2.2-.8.5-1.7.9-2.6 1.1A3.8 3.8 0 0012 8.5c0 .3 0 .6.1.8-3.2-.2-6-1.7-7.9-4.1-.3.6-.5 1.3-.5 2 0 1.3.7 2.5 1.8 3.2-.6 0-1.2-.2-1.7-.5v.1c0 1.9 1.4 3.5 3.2 3.8-.3.1-.7.1-1 .1-.3 0-.5 0-.8-.1.5 1.5 2 2.7 3.8 2.7A7.6 7.6 0 012 19.5a10.7 10.7 0 005.8 1.7c7 0 10.8-5.8 10.8-10.8v-.5c.7-.5 1.4-1.2 1.9-2z"/>
+    </svg>
+  </a>
+
+  <!-- Instagram -->
+  <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#dba39c] transition">
+    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6.5-.9a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/>
+    </svg>
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#dba39c] transition">
+    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M6.94 6.5A2.44 2.44 0 014.5 4.06 2.44 2.44 0 016.94 1.6a2.44 2.44 0 012.44 2.46A2.44 2.44 0 016.94 6.5zM4.5 8h5v12h-5V8zm7.5 0h4.7v1.7h.1c.6-1.1 2-2.3 4-2.3 4.3 0 5.1 2.8 5.1 6.4V20h-5v-5.5c0-1.3 0-3-1.8-3-1.8 0-2.1 1.4-2.1 2.9V20h-5V8z"/>
+    </svg>
+  </a>
+
+</div>
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div>
+        <h4 class="text-sm uppercase tracking-widest text-gray-300 mb-6">Quick Links</h4>
+       <ul class="space-y-3 text-gray-400 text-sm">
+  <li><a href="/index.html" class="hover:text-[#c97c74] transition">Home</a></li>
+  <li><a href="/pages/tretment.html" class="hover:text-[#c97c74] transition">Treatments</a></li>
+  <li><a href="/pages/suplyment.html" class="hover:text-[#c97c74] transition">Supplements</a></li>
+  <li><a href="/pages/blog.html" class="hover:text-[#c97c74] transition">Blogs</a></li>
+</ul>
+      </div>
+
+      <!-- CONCERNS -->
+      <div>
+        <h4 class="text-sm uppercase tracking-widest text-gray-300 mb-6">Concerns</h4>
+       <ul class="space-y-3 text-gray-400 text-sm">
+  <li><a href="/pages/skin.html" class="hover:text-[#c97c74] transition">Skin</a></li>
+  <li><a href="/pages/anti-aging.html" class="hover:text-[#c97c74] transition">Anti Aging</a></li>
+  <li><a href="/pages/hair.html" class="hover:text-[#c97c74] transition">Hair</a></li>
+  <li><a href="/pages/body.html" class="hover:text-[#c97c74] transition">Body</a></li>
+  <li><a href="/pages/men.html" class="hover:text-[#c97c74] transition">Men’s</a></li>
+</ul>
+      </div>
+
+      <!-- CONTACT -->
+      <div>
+        <h4 class="text-sm uppercase tracking-widest text-gray-300 mb-6">Reach Us</h4>
+
+        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+          301/405, La Magasine,<br>
+          Santacruz – West, Mumbai – 400054, India.
+        </p>
+
+        <a href="tel:+919833055236"
+   class="text-white font-semibold text-lg hover:text-[#c97c74] transition">
+   +91 9833055236
+</a>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+
+      <p class="text-gray-500 text-sm">
+        © 2026 Dr. Rashmi Shetty. All rights reserved.
+      </p>
+
+      <div class="flex gap-6 text-sm text-gray-400">
+        <a href="#" class="hover:text-white">Privacy Policy</a>
+        <a href="#" class="hover:text-white">Terms of Service</a>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

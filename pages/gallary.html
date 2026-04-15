@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="hi-IN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Clinic & Treatment Results</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+            <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gallery-item { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .gallery-item:hover { transform: scale(1.02); }
+         [x-cloak] { display: none !important; }
+        .before-after-label { background: rgba(16, 185, 129, 0.9); }
+        .logo-fix {
+  height: 60px;              /* logo bada */
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0);     /* dark */
+  transform: scale(1.2);     /* visually bada */
+  transform-origin: left center;
+}
+    </style>
+</head>
+<body class="bg-white text-slate-900">
+
+ <header class="sticky top-0 z-50 bg-white shadow-md" x-data="{ mobileMenuOpen: false, activeDropdown: null }">
+
+    <nav class="max-w-[1400px] mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+
+            <!-- LOGO -->
+            <a href="/" class="flex items-center overflow-hidden">
+               <img src="/imgs/logo.webp"
+     class="h-14 w-auto object-contain brightness-0 contrast-200 scale-125 origin-left"
+     alt="Logo">
+            </a>
+
+            <!-- DESKTOP MENU -->
+            <div class="hidden xl:flex items-center space-x-3">
+
+                <a href="/index.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">Home</a>
+                <a href="/pages/about.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">About</a>
+
+                <!-- DROPDOWN -->
+                <div class="relative" @mouseenter="activeDropdown = 'concerns'" @mouseleave="activeDropdown = null">
+
+                   <button class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">
+    Concerns
+
+    <svg 
+        class="w-5 h-5 transition-transform duration-200"
+        :class="activeDropdown === 'concerns' ? 'rotate-180' : ''"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24">
+
+        <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M19 9l-7 7-7-7" />
+
+    </svg>
+</button>
+
+                    <div x-show="activeDropdown === 'concerns'" x-cloak
+                         class="absolute left-0 top-full mt-1 w-52 bg-white rounded-lg shadow-lg py-2">
+
+                        <a href="/pages/skin.html" class="block px-4 py-2 text-sm hover:bg-[#fbeeee]">Skin</a>
+                        <a href="/pages/anti-aging.html" class="block px-4 py-2 text-sm hover:bg-[#fbeeee]">Anti Ageing</a>
+                        <a href="/pages/hair.html" class="block px-4 py-2 text-sm hover:bg-[#fbeeee]">Hair</a>
+                        <a href="/pages/body.html" class="block px-4 py-2 text-sm hover:bg-[#fbeeee]">Body</a>
+                        <a href="/pages/men.html" class="block px-4 py-2 text-sm hover:bg-[#fbeeee]">Men</a>
+
+                    </div>
+                </div>
+
+                <a href="/pages/tretment.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">Treatments</a>
+                <a href="/pages/suplyment.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">Supplements</a>
+                <a href="/pages/blog.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">Blog</a>
+                <a href="/pages/service.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">Services</a>
+
+            </div>
+
+            <!-- CONTACT -->
+            <div class="hidden xl:block">
+                <a href="/pages/contact.html"
+                   class="bg-[#c97c74] text-white px-5 py-2 rounded-full text-sm font-semibold hover:opacity-90">
+                    Contact Us
+                </a>
+            </div>
+
+            <!-- HAMBURGER -->
+            <button @click="mobileMenuOpen = true" class="xl:hidden p-2">
+                <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor">
+                    <path stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                </svg>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div x-show="mobileMenuOpen" x-cloak class="fixed inset-0 z-50 xl:hidden">
+
+        <div class="absolute inset-0 bg-black/50" @click="mobileMenuOpen = false"></div>
+
+        <div class="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-white p-6 overflow-y-auto">
+
+            <!-- HEADER -->
+            <div class="flex justify-between items-center mb-6">
+                <img src="/imgs/logo.webp" class="h-10 brightness-0">
+                <button @click="mobileMenuOpen = false" class="text-xl">✕</button>
+            </div>
+
+            <!-- LINKS -->
+            <a href="/index.html" class="block py-3 border-b text-base">Home</a>
+            <a href="/pages/about.html" class="block py-3 border-b text-base">About</a>
+            <!-- DROPDOWN -->
+            <div x-data="{ open: false }">
+                <button @click="open = !open" class="flex justify-between w-full py-3 border-b text-base">
+                    Concerns
+                    <span>▼</span>
+                </button>
+
+                <div x-show="open" class="pl-4">
+                    <a href="/pages/skin.html" class="block py-2">Skin</a>
+                    <a href="/pages/anti-aging.html" class="block py-2">Anti Ageing</a>
+                    <a href="/pages/hair.html" class="block py-2">Hair</a>
+                    <a href="/pages/body.html" class="block py-2">Body</a>
+                    <a href="/pages/men.html" class="block py-2">Men</a>
+                </div>
+            </div>
+
+            <a href="/pages/tretment.html" class="block py-3 border-b">Treatments</a>
+            <a href="/pages/suplyment.html" class="block py-3 border-b">Supplements</a>
+            <a href="/pages/blog.html" class="block py-3 border-b">Blog</a>
+            <a href="/pages/service.html" class="block py-3 border-b">Services</a>
+            <a href="/pages/contact.html" class="block py-3 border-b">Contact</a>
+
+        </div>
+    </div>
+
+</header>
+
+    <section class="py-16 bg-emerald-50/50 border-b border-emerald-100 text-center">
+        <div class="container mx-auto px-6">
+            <span class="text-emerald-600 font-bold uppercase tracking-widest text-xs">Visual Showcase</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mt-4">Our <span class="text-emerald-500">Gallery</span></h1>
+            <p class="text-slate-500 mt-6 max-w-xl mx-auto italic">“Real Results, Real Care. Hamari clinic aur treatments ki ek jhalak.”</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-10 flex items-center gap-3">
+                <span class="w-2 h-8 bg-emerald-500 rounded-full"></span> Clinic Interior
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="gallery-item rounded-[2rem] overflow-hidden shadow-lg h-64 md:col-span-2">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80" alt="Clinic Reception" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item rounded-[2rem] overflow-hidden shadow-lg h-64">
+                    <img src="https://images.unsplash.com/photo-1629909613654-2871b74d5314?auto=format&fit=crop&q=80" alt="Consultation Room" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-emerald-50/30">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-10 flex items-center gap-3 text-center justify-center">
+                Transformation Results
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="bg-white p-4 rounded-[3rem] shadow-xl border border-emerald-100 overflow-hidden group">
+                    <div class="flex gap-2 h-80">
+                        <div class="relative w-1/2 rounded-l-[2rem] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80" alt="Before" class="w-full h-full object-cover grayscale">
+                            <span class="absolute top-4 left-4 before-after-label text-white text-xs px-3 py-1 rounded-full font-bold">BEFORE</span>
+                        </div>
+                        <div class="relative w-1/2 rounded-r-[2rem] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80" alt="After" class="w-full h-full object-cover">
+                            <span class="absolute top-4 right-4 before-after-label text-white text-xs px-3 py-1 rounded-full font-bold uppercase">After 3 Months</span>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h4 class="font-bold text-emerald-800 uppercase tracking-widest text-sm">Advanced Hair Therapy</h4>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-[3rem] shadow-xl border border-emerald-100 overflow-hidden group">
+                    <div class="flex gap-2 h-80">
+                        <div class="relative w-1/2 rounded-l-[2rem] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&q=80" alt="Before" class="w-full h-full object-cover opacity-80">
+                            <span class="absolute top-4 left-4 before-after-label text-white text-xs px-3 py-1 rounded-full font-bold uppercase">Before</span>
+                        </div>
+                        <div class="relative w-1/2 rounded-r-[2rem] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80" alt="After" class="w-full h-full object-cover">
+                            <span class="absolute top-4 right-4 before-after-label text-white text-xs px-3 py-1 rounded-full font-bold uppercase">After 6 Weeks</span>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h4 class="font-bold text-emerald-800 uppercase tracking-widest text-sm">Acne & Scar Treatment</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-10 flex items-center gap-3">
+                <span class="w-2 h-8 bg-emerald-500 rounded-full"></span> Advanced Equipment
+            </h2>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="gallery-item rounded-3xl overflow-hidden shadow-md h-48 border border-slate-100">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80" alt="Laser Machine" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item rounded-3xl overflow-hidden shadow-md h-48 border border-slate-100">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80" alt="Microscope" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item rounded-3xl overflow-hidden shadow-md h-48 border border-slate-100">
+                    <img src="https://images.unsplash.com/photo-1579154235602-3c2c2aa59c1c?auto=format&fit=crop&q=80" alt="Skin Scanner" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item rounded-3xl overflow-hidden shadow-md h-48 border border-slate-100">
+                    <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&q=80" alt="Clinical Tool" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-slate-900 text-white text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-6">Get Your Own Transformation</h2>
+            <a href="#" class="bg-emerald-500 text-white px-10 py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-emerald-600 transition-all inline-block active:scale-95">Book Consultation</a>
+        </div>
+    </section>
+
+  <footer class="bg-[#0f172a] text-white pt-20 pb-10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-20">
+
+    <!-- TOP GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+      <!-- BRAND -->
+      <div class="space-y-6">
+        <img src="/imgs/logo.webp" class="h-10">
+
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Expert dermatological care focused on rejuvenating your natural beauty. 
+          Delivering advanced skin solutions with precision and care.
+        </p>
+
+        <!-- SOCIAL -->
+        <div class="flex gap-4">
+
+  <!-- Twitter -->
+  <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#dba39c] transition">
+    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M22 5.8c-.7.3-1.5.5-2.2.6.8-.5 1.4-1.3 1.7-2.2-.8.5-1.7.9-2.6 1.1A3.8 3.8 0 0012 8.5c0 .3 0 .6.1.8-3.2-.2-6-1.7-7.9-4.1-.3.6-.5 1.3-.5 2 0 1.3.7 2.5 1.8 3.2-.6 0-1.2-.2-1.7-.5v.1c0 1.9 1.4 3.5 3.2 3.8-.3.1-.7.1-1 .1-.3 0-.5 0-.8-.1.5 1.5 2 2.7 3.8 2.7A7.6 7.6 0 012 19.5a10.7 10.7 0 005.8 1.7c7 0 10.8-5.8 10.8-10.8v-.5c.7-.5 1.4-1.2 1.9-2z"/>
+    </svg>
+  </a>
+
+  <!-- Instagram -->
+  <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#dba39c] transition">
+    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6.5-.9a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/>
+    </svg>
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#dba39c] transition">
+    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M6.94 6.5A2.44 2.44 0 014.5 4.06 2.44 2.44 0 016.94 1.6a2.44 2.44 0 012.44 2.46A2.44 2.44 0 016.94 6.5zM4.5 8h5v12h-5V8zm7.5 0h4.7v1.7h.1c.6-1.1 2-2.3 4-2.3 4.3 0 5.1 2.8 5.1 6.4V20h-5v-5.5c0-1.3 0-3-1.8-3-1.8 0-2.1 1.4-2.1 2.9V20h-5V8z"/>
+    </svg>
+  </a>
+
+</div>
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div>
+        <h4 class="text-sm uppercase tracking-widest text-gray-300 mb-6">Quick Links</h4>
+       <ul class="space-y-3 text-gray-400 text-sm">
+  <li><a href="/index.html" class="hover:text-[#c97c74] transition">Home</a></li>
+  <li><a href="/pages/tretment.html" class="hover:text-[#c97c74] transition">Treatments</a></li>
+  <li><a href="/pages/suplyment.html" class="hover:text-[#c97c74] transition">Supplements</a></li>
+  <li><a href="/pages/blog.html" class="hover:text-[#c97c74] transition">Blogs</a></li>
+</ul>
+      </div>
+
+      <!-- CONCERNS -->
+      <div>
+        <h4 class="text-sm uppercase tracking-widest text-gray-300 mb-6">Concerns</h4>
+       <ul class="space-y-3 text-gray-400 text-sm">
+  <li><a href="/pages/skin.html" class="hover:text-[#c97c74] transition">Skin</a></li>
+  <li><a href="/pages/anti-aging.html" class="hover:text-[#c97c74] transition">Anti Aging</a></li>
+  <li><a href="/pages/hair.html" class="hover:text-[#c97c74] transition">Hair</a></li>
+  <li><a href="/pages/body.html" class="hover:text-[#c97c74] transition">Body</a></li>
+  <li><a href="/pages/men.html" class="hover:text-[#c97c74] transition">Men’s</a></li>
+</ul>
+      </div>
+
+      <!-- CONTACT -->
+      <div>
+        <h4 class="text-sm uppercase tracking-widest text-gray-300 mb-6">Reach Us</h4>
+
+        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+          301/405, La Magasine,<br>
+          Santacruz – West, Mumbai – 400054, India.
+        </p>
+
+        <a href="tel:+919833055236"
+   class="text-white font-semibold text-lg hover:text-[#c97c74] transition">
+   +91 9833055236
+</a>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+
+      <p class="text-gray-500 text-sm">
+        © 2026 Dr. Rashmi Shetty. All rights reserved.
+      </p>
+
+      <div class="flex gap-6 text-sm text-gray-400">
+        <a href="#" class="hover:text-white">Privacy Policy</a>
+        <a href="#" class="hover:text-white">Terms of Service</a>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+
+</body>
+</html>

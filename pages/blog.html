@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="hi-IN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Care Tips & Blog | Expert Dermatologist Advice</title>
+    <meta name="description" content="Expert tips on acne, oily skin, and hair fall. Read our latest articles for healthy skin and hair.">
+    <script src="https://cdn.tailwindcss.com"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .blog-card:hover .blog-img { transform: scale(1.05); }
+        [x-cloak] { display: none !important; }
+        .category-btn:hover { background-color: #10b981; color: white; }
+        .logo-fix {
+  height: 60px;              /* logo bada */
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0);     /* dark */
+  transform: scale(1.2);     /* visually bada */
+  transform-origin: left center;
+}
+    </style>
+</head>
+<body class="bg-white text-slate-900">
+
+ <header class="sticky top-0 z-50 bg-white shadow-md" x-data="{ mobileMenuOpen: false, activeDropdown: null }">
+
+    <nav class="max-w-[1400px] mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+
+            <!-- LOGO -->
+            <a href="/" class="flex items-center overflow-hidden">
+               <img src="/imgs/logo.webp"
+     class="h-14 w-auto object-contain brightness-0 contrast-200 scale-125 origin-left"
+     alt="Logo">
+            </a>
+
+            <!-- DESKTOP MENU -->
+            <div class="hidden xl:flex items-center space-x-3">
+
+                <a href="/index.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">Home</a>
+                <a href="/pages/about.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">About</a>
+
+                <!-- DROPDOWN -->
+                <div class="relative" @mouseenter="activeDropdown = 'concerns'" @mouseleave="activeDropdown = null">
+
+                   <button class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">
+    Concerns
+
+    <svg 
+        class="w-5 h-5 transition-transform duration-200"
+        :class="activeDropdown === 'concerns' ? 'rotate-180' : ''"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24">
+
+        <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M19 9l-7 7-7-7" />
+
+    </svg>
+</button>
+
+                    <div x-show="activeDropdown === 'concerns'" x-cloak
+                         class="absolute left-0 top-full mt-1 w-52 bg-white rounded-lg shadow-lg py-2">
+
+                        <a href="/pages/skin.html" class="block px-4 py-2 text-sm hover:bg-[#fbeeee]">Skin</a>
+                        <a href="/pages/anti-aging.html" class="block px-4 py-2 text-sm hover:bg-[#fbeeee]">Anti Ageing</a>
+                        <a href="/pages/hair.html" class="block px-4 py-2 text-sm hover:bg-[#fbeeee]">Hair</a>
+                        <a href="/pages/body.html" class="block px-4 py-2 text-sm hover:bg-[#fbeeee]">Body</a>
+                        <a href="/pages/men.html" class="block px-4 py-2 text-sm hover:bg-[#fbeeee]">Men</a>
+
+                    </div>
+                </div>
+
+                <a href="/pages/tretment.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">Treatments</a>
+                <a href="/pages/suplyment.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">Supplements</a>
+                <a href="/pages/blog.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">Blog</a>
+                <a href="/pages/service.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">Services</a>
+
+            </div>
+
+            <!-- CONTACT -->
+            <div class="hidden xl:block">
+                <a href="/pages/contact.html"
+                   class="bg-[#c97c74] text-white px-5 py-2 rounded-full text-sm font-semibold hover:opacity-90">
+                    Contact Us
+                </a>
+            </div>
+
+            <!-- HAMBURGER -->
+            <button @click="mobileMenuOpen = true" class="xl:hidden p-2">
+                <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor">
+                    <path stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                </svg>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div x-show="mobileMenuOpen" x-cloak class="fixed inset-0 z-50 xl:hidden">
+
+        <div class="absolute inset-0 bg-black/50" @click="mobileMenuOpen = false"></div>
+
+        <div class="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-white p-6 overflow-y-auto">
+
+            <!-- HEADER -->
+            <div class="flex justify-between items-center mb-6">
+                <img src="/imgs/logo.webp" class="h-10 brightness-0">
+                <button @click="mobileMenuOpen = false" class="text-xl">✕</button>
+            </div>
+
+            <!-- LINKS -->
+            <a href="/index.html" class="block py-3 border-b text-base">Home</a>
+            <a href="/pages/about.html" class="block py-3 border-b text-base">About</a>
+            <!-- DROPDOWN -->
+            <div x-data="{ open: false }">
+                <button @click="open = !open" class="flex justify-between w-full py-3 border-b text-base">
+                    Concerns
+                    <span>▼</span>
+                </button>
+
+                <div x-show="open" class="pl-4">
+                    <a href="/pages/skin.html" class="block py-2">Skin</a>
+                    <a href="/pages/anti-aging.html" class="block py-2">Anti Ageing</a>
+                    <a href="/pages/hair.html" class="block py-2">Hair</a>
+                    <a href="/pages/body.html" class="block py-2">Body</a>
+                    <a href="/pages/men.html" class="block py-2">Men</a>
+                </div>
+            </div>
+
+            <a href="/pages/tretment.html" class="block py-3 border-b">Treatments</a>
+            <a href="/pages/suplyment.html" class="block py-3 border-b">Supplements</a>
+            <a href="/pages/blog.html" class="block py-3 border-b">Blog</a>
+            <a href="/pages/service.html" class="block py-3 border-b">Services</a>
+            <a href="/pages/contact.html" class="block py-3 border-b">Contact</a>
+
+        </div>
+    </div>
+
+</header>
+
+  <section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+
+    <!-- BACKGROUND IMAGE -->
+    <div class="absolute inset-0 z-0">
+        <img src="/imgs/blog-hero.webp" 
+             alt="Knowledge Hub" 
+             class="w-full h-full object-cover">
+
+        <!-- LIGHT OVERLAY (clear visibility) -->
+        <div class="absolute inset-0 bg-[#000000]/30"></div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="container mx-auto px-6 relative z-10 text-center text-white">
+
+        <!-- TAG -->
+        <span class="text-[#ffdede] font-semibold uppercase tracking-widest text-sm mb-4 block">
+            Scientific Insights
+        </span>
+
+        <!-- HEADING -->
+        <h1 class="text-4xl md:text-7xl font-bold mb-6 leading-tight">
+            Expert <span class="text-[#f5c5bf]">Tips & Articles</span>
+        </h1>
+
+        <!-- TEXT -->
+        <p class="text-lg max-w-2xl mx-auto text-white/90">
+            “Skin aur hair ki health se judi har jankari, ab ek hi jagah.”
+        </p>
+
+    </div>
+
+</section>
+
+   <section id="skin" class="py-24 bg-[#fff7f6]">
+    <div class="container mx-auto px-6">
+
+        <!-- HEADING -->
+        <div class="flex items-center gap-4 mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+                Skin <span class="text-[#c97c74]">Care</span>
+            </h2>
+            <div class="h-1 flex-grow bg-[#f1d5d2] rounded-full"></div>
+        </div>
+
+        <!-- CARDS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+            <!-- CARD -->
+            <article class="group rounded-[2.5rem] bg-white border border-[#f1d5d2] overflow-hidden shadow-md hover:shadow-2xl transition duration-500">
+                
+                <div class="h-64 overflow-hidden">
+                    <img src="/imgs/acne.webp" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+
+                <div class="p-8">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4 group-hover:text-[#c97c74] transition">
+                        Acne Kaise Thik Kare?
+                    </h3>
+
+                    <p class="text-gray-500 text-sm mb-6">
+                        Janiye medical-grade tips aur lifestyle changes jo aapki skin ko hamesha ke liye clear rakheinge.
+                    </p>
+
+                    <a href="#" class="text-[#c97c74] font-semibold">
+                        Read More →
+                    </a>
+                </div>
+
+            </article>
+
+            <!-- CARD -->
+            <article class="group rounded-[2.5rem] bg-white border border-[#f1d5d2] overflow-hidden shadow-md hover:shadow-2xl transition duration-500">
+                
+                <div class="h-64 overflow-hidden">
+                    <img src="/imgs/anti.webp" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+
+                <div class="p-8">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4 group-hover:text-[#c97c74] transition">
+                        Anti-Aging Secrets
+                    </h3>
+
+                    <p class="text-gray-500 text-sm mb-6">
+                        Fine lines aur wrinkles ko rokne ke liye best dermatologist approved serums aur routines.
+                    </p>
+
+                    <a href="#" class="text-[#c97c74] font-semibold">
+                        Read More →
+                    </a>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+</section>
+   <section id="hair" class="py-24 bg-[#fbeeee]">
+    <div class="container mx-auto px-6">
+
+        <!-- HEADING -->
+        <div class="flex items-center gap-4 mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+                Hair <span class="text-[#c97c74]">Health</span>
+            </h2>
+            <div class="h-1 flex-grow bg-[#f1d5d2] rounded-full"></div>
+        </div>
+
+        <!-- CARDS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+            <!-- CARD -->
+            <article class="group rounded-[2.5rem] bg-white border border-[#f1d5d2] overflow-hidden shadow-md hover:shadow-2xl transition duration-500">
+                
+                <div class="h-64 overflow-hidden">
+                    <img src="/imgs/hair-fall.webp" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+
+                <div class="p-8">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4 group-hover:text-[#c97c74] transition">
+                        Hair Fall Control
+                    </h3>
+
+                    <p class="text-gray-500 text-sm mb-6">
+                        Baal kyu jhadte hain? Stress ya diet? Janiye hair fall ke peeche ke asali kaaran aur unka ilaaj.
+                    </p>
+
+                    <a href="#" class="text-[#c97c74] font-semibold">
+                        Read More →
+                    </a>
+                </div>
+
+            </article>
+
+            <!-- CARD -->
+            <article class="group rounded-[2.5rem] bg-white border border-[#f1d5d2] overflow-hidden shadow-md hover:shadow-2xl transition duration-500">
+                
+                <div class="h-64 overflow-hidden">
+                    <img src="/imgs/prp.webp" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+
+                <div class="p-8">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4 group-hover:text-[#c97c74] transition">
+                        PRP Therapy Benefits
+                    </h3>
+
+                    <p class="text-gray-500 text-sm mb-6">
+                        Kya PRP treatment hair growth ke liye safe hai? Janiye hamare expert ki rai.
+                    </p>
+
+                    <a href="#" class="text-[#c97c74] font-semibold">
+                        Read More →
+                    </a>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+   <section id="body" class="py-24 bg-[#fff7f6]">
+    <div class="container mx-auto px-6">
+
+        <!-- HEADING -->
+        <div class="flex items-center gap-4 mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+                Body <span class="text-[#c97c74]">Aesthetics</span>
+            </h2>
+            <div class="h-1 flex-grow bg-[#f1d5d2] rounded-full"></div>
+        </div>
+
+        <!-- CARDS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+            <!-- CARD -->
+            <article class="group rounded-[2.5rem] bg-white border border-[#f1d5d2] overflow-hidden shadow-md hover:shadow-2xl transition duration-500">
+                
+                <div class="h-64 overflow-hidden">
+                    <img src="/imgs/body-polish.webp" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+
+                <div class="p-8">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4 group-hover:text-[#c97c74] transition">
+                        Body Polishing Benefits
+                    </h3>
+
+                    <p class="text-gray-500 text-sm mb-6">
+                        Tan removal aur soft skin ke liye body polishing kyu zaruri hai?
+                    </p>
+
+                    <a href="#" class="text-[#c97c74] font-semibold">
+                        Read More →
+                    </a>
+                </div>
+
+            </article>
+
+            <!-- CARD -->
+            <article class="group rounded-[2.5rem] bg-white border border-[#f1d5d2] overflow-hidden shadow-md hover:shadow-2xl transition duration-500">
+                
+                <div class="h-64 overflow-hidden">
+                    <img src="/imgs/stretch-marks.webp" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+
+                <div class="p-8">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4 group-hover:text-[#c97c74] transition">
+                        Stretch Marks Removal
+                    </h3>
+
+                    <p class="text-gray-500 text-sm mb-6">
+                        Laser aur advanced treatments se purane stretch marks ko kam karein.
+                    </p>
+
+                    <a href="#" class="text-[#c97c74] font-semibold">
+                        Read More →
+                    </a>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+</section>
+   <section id="men" class="py-24 bg-[#fbeeee]">
+    <div class="container mx-auto px-6">
+
+        <!-- HEADING -->
+        <div class="flex items-center gap-4 mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+                Men's <span class="text-[#c97c74]">Special</span>
+            </h2>
+            <div class="h-1 flex-grow bg-[#f1d5d2] rounded-full"></div>
+        </div>
+
+        <!-- CARDS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+            <!-- CARD -->
+            <article class="group rounded-[2.5rem] bg-white border border-[#f1d5d2] overflow-hidden shadow-md hover:shadow-2xl transition duration-500">
+                
+                <div class="h-64 overflow-hidden">
+                    <img src="/imgs/men1.webp" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+
+                <div class="p-8">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4 group-hover:text-[#c97c74] transition">
+                        Beard Care Tips
+                    </h3>
+
+                    <p class="text-gray-500 text-sm mb-6">
+                        Patchy beard aur itching se chhutkara paane ke medical tarike.
+                    </p>
+
+                    <a href="#" class="text-[#c97c74] font-semibold">
+                        Read More →
+                    </a>
+                </div>
+
+            </article>
+
+            <!-- CARD -->
+            <article class="group rounded-[2.5rem] bg-white border border-[#f1d5d2] overflow-hidden shadow-md hover:shadow-2xl transition duration-500">
+                
+                <div class="h-64 overflow-hidden">
+                    <img src="/imgs/men2.webp" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+
+                <div class="p-8">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4 group-hover:text-[#c97c74] transition">
+                        Men's Oily Skin Fix
+                    </h3>
+
+                    <p class="text-gray-500 text-sm mb-6">
+                        Mardon ki thick skin ke liye best medical clean-up options.
+                    </p>
+
+                    <a href="#" class="text-[#c97c74] font-semibold">
+                        Read More →
+                    </a>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+</section>
+   <footer class="bg-[#0f172a] text-white pt-20 pb-10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-20">
+
+    <!-- TOP GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+      <!-- BRAND -->
+      <div class="space-y-6">
+        <img src="/imgs/logo.webp" class="h-10">
+
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Expert dermatological care focused on rejuvenating your natural beauty. 
+          Delivering advanced skin solutions with precision and care.
+        </p>
+
+        <!-- SOCIAL -->
+        <div class="flex gap-4">
+
+  <!-- Twitter -->
+  <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#dba39c] transition">
+    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M22 5.8c-.7.3-1.5.5-2.2.6.8-.5 1.4-1.3 1.7-2.2-.8.5-1.7.9-2.6 1.1A3.8 3.8 0 0012 8.5c0 .3 0 .6.1.8-3.2-.2-6-1.7-7.9-4.1-.3.6-.5 1.3-.5 2 0 1.3.7 2.5 1.8 3.2-.6 0-1.2-.2-1.7-.5v.1c0 1.9 1.4 3.5 3.2 3.8-.3.1-.7.1-1 .1-.3 0-.5 0-.8-.1.5 1.5 2 2.7 3.8 2.7A7.6 7.6 0 012 19.5a10.7 10.7 0 005.8 1.7c7 0 10.8-5.8 10.8-10.8v-.5c.7-.5 1.4-1.2 1.9-2z"/>
+    </svg>
+  </a>
+
+  <!-- Instagram -->
+  <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#dba39c] transition">
+    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6.5-.9a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/>
+    </svg>
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#dba39c] transition">
+    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M6.94 6.5A2.44 2.44 0 014.5 4.06 2.44 2.44 0 016.94 1.6a2.44 2.44 0 012.44 2.46A2.44 2.44 0 016.94 6.5zM4.5 8h5v12h-5V8zm7.5 0h4.7v1.7h.1c.6-1.1 2-2.3 4-2.3 4.3 0 5.1 2.8 5.1 6.4V20h-5v-5.5c0-1.3 0-3-1.8-3-1.8 0-2.1 1.4-2.1 2.9V20h-5V8z"/>
+    </svg>
+  </a>
+
+</div>
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div>
+        <h4 class="text-sm uppercase tracking-widest text-gray-300 mb-6">Quick Links</h4>
+       <ul class="space-y-3 text-gray-400 text-sm">
+  <li><a href="/index.html" class="hover:text-[#c97c74] transition">Home</a></li>
+  <li><a href="/pages/tretment.html" class="hover:text-[#c97c74] transition">Treatments</a></li>
+  <li><a href="/pages/suplyment.html" class="hover:text-[#c97c74] transition">Supplements</a></li>
+  <li><a href="/pages/blog.html" class="hover:text-[#c97c74] transition">Blogs</a></li>
+</ul>
+      </div>
+
+      <!-- CONCERNS -->
+      <div>
+        <h4 class="text-sm uppercase tracking-widest text-gray-300 mb-6">Concerns</h4>
+       <ul class="space-y-3 text-gray-400 text-sm">
+  <li><a href="/pages/skin.html" class="hover:text-[#c97c74] transition">Skin</a></li>
+  <li><a href="/pages/anti-aging.html" class="hover:text-[#c97c74] transition">Anti Aging</a></li>
+  <li><a href="/pages/hair.html" class="hover:text-[#c97c74] transition">Hair</a></li>
+  <li><a href="/pages/body.html" class="hover:text-[#c97c74] transition">Body</a></li>
+  <li><a href="/pages/men.html" class="hover:text-[#c97c74] transition">Men’s</a></li>
+</ul>
+      </div>
+
+      <!-- CONTACT -->
+      <div>
+        <h4 class="text-sm uppercase tracking-widest text-gray-300 mb-6">Reach Us</h4>
+
+        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+          301/405, La Magasine,<br>
+          Santacruz – West, Mumbai – 400054, India.
+        </p>
+
+        <a href="tel:+919833055236"
+   class="text-white font-semibold text-lg hover:text-[#c97c74] transition">
+   +91 9833055236
+</a>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+
+      <p class="text-gray-500 text-sm">
+        © 2026 Dr. Rashmi Shetty. All rights reserved.
+      </p>
+
+      <div class="flex gap-6 text-sm text-gray-400">
+        <a href="#" class="hover:text-white">Privacy Policy</a>
+        <a href="#" class="hover:text-white">Terms of Service</a>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
