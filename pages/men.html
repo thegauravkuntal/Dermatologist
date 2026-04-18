@@ -26,28 +26,29 @@
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
-    <header class="sticky top-0 z-50 bg-white shadow-md" x-data="{ mobileMenuOpen: false, activeDropdown: null }">
+     <header class="sticky top-0 z-50 bg-black shadow-md" x-data="{ mobileMenuOpen: false, activeDropdown: null }">
 
     <nav class="max-w-[1400px] mx-auto px-4 lg:px-8">
         <div class="flex items-center justify-between h-16">
 
             <!-- LOGO -->
             <a href="/" class="flex items-center overflow-hidden">
-               <img src="/imgs/logo.webp"
-     class="h-14 w-auto object-contain brightness-0 contrast-200 scale-125 origin-left"
+              <img src="/imgs/logo.webp"
+     class="h-14 w-auto object-contain scale-125 origin-left"
+     style="filter: brightness(0) saturate(100%) invert(78%) sepia(35%) saturate(600%) hue-rotate(5deg);"
      alt="Logo">
             </a>
 
             <!-- DESKTOP MENU -->
             <div class="hidden xl:flex items-center space-x-3">
 
-                <a href="/index.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">Home</a>
-                <a href="/pages/about.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">About</a>
+                <a href="/index.html" class="px-3 py-2 text-sm font-medium text-white hover:text-[#D4AF37]">Home</a>
+                <a href="/pages/about.html" class="px-3 py-2 text-sm font-medium text-white hover:text-[#D4AF37]">About</a>
 
                 <!-- DROPDOWN -->
                 <div class="relative" @mouseenter="activeDropdown = 'concerns'" @mouseleave="activeDropdown = null">
 
-                   <button class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">
+                   <button class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-white hover:text-[#D4AF37]">
     Concerns
 
     <svg 
@@ -67,35 +68,35 @@
 </button>
 
                     <div x-show="activeDropdown === 'concerns'" x-cloak
-                         class="absolute left-0 top-full mt-1 w-52 bg-white rounded-lg shadow-lg py-2">
+                         class="absolute left-0 top-full mt-1 w-52 bg-black rounded-lg shadow-lg py-2">
 
-                        <a href="/pages/skin.html" class="block px-4 py-2 text-sm hover:bg-[#fbeeee]">Skin</a>
-                        <a href="/pages/anti-aging.html" class="block px-4 py-2 text-sm hover:bg-[#fbeeee]">Anti Ageing</a>
-                        <a href="/pages/hair.html" class="block px-4 py-2 text-sm hover:bg-[#fbeeee]">Hair</a>
-                        <a href="/pages/body.html" class="block px-4 py-2 text-sm hover:bg-[#fbeeee]">Body</a>
-                        <a href="/pages/men.html" class="block px-4 py-2 text-sm hover:bg-[#fbeeee]">Men</a>
+                        <a href="/pages/skin.html" class="block px-4 py-2 text-sm text-white hover:bg-[#D4AF37]/20">Skin</a>
+                        <a href="/pages/anti-aging.html" class="block px-4 py-2 text-sm text-white hover:bg-[#D4AF37]/20">Anti Ageing</a>
+                        <a href="/pages/hair.html" class="block px-4 py-2 text-sm text-white hover:bg-[#D4AF37]/20">Hair</a>
+                        <a href="/pages/body.html" class="block px-4 py-2 text-sm text-white hover:bg-[#D4AF37]/20">Body</a>
+                        <a href="/pages/men.html" class="block px-4 py-2 text-sm text-white hover:bg-[#D4AF37]/20">Men</a>
 
                     </div>
                 </div>
 
-                <a href="/pages/tretment.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">Treatments</a>
-                <a href="/pages/suplyment.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">Supplements</a>
-                <a href="/pages/blog.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">Blog</a>
-                <a href="/pages/service.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#c97c74]">Services</a>
+                <a href="/pages/tretment.html" class="px-3 py-2 text-sm font-medium text-white hover:text-[#D4AF37]">Treatments</a>
+                <a href="/pages/suplyment.html" class="px-3 py-2 text-sm font-medium text-white hover:text-[#D4AF37]">Supplements</a>
+                <a href="/pages/blog.html" class="px-3 py-2 text-sm font-medium text-white hover:text-[#D4AF37]">Blog</a>
+                <a href="/pages/service.html" class="px-3 py-2 text-sm font-medium text-white hover:text-[#D4AF37]">Services</a>
 
             </div>
 
             <!-- CONTACT -->
             <div class="hidden xl:block">
                 <a href="/pages/contact.html"
-                   class="bg-[#c97c74] text-white px-5 py-2 rounded-full text-sm font-semibold hover:opacity-90">
+                   class="bg-[#D4AF37] text-black px-5 py-2 rounded-full text-sm font-semibold hover:opacity-90">
                     Contact Us
                 </a>
             </div>
 
             <!-- HAMBURGER -->
             <button @click="mobileMenuOpen = true" class="xl:hidden p-2">
-                <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor">
                     <path stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
                 </svg>
             </button>
@@ -104,47 +105,50 @@
     </nav>
 
     <!-- MOBILE MENU -->
-    <div x-show="mobileMenuOpen" x-cloak class="fixed inset-0 z-50 xl:hidden">
+    <!-- MOBILE MENU -->
+<div x-show="mobileMenuOpen" x-cloak class="fixed inset-0 z-50 xl:hidden">
 
-        <div class="absolute inset-0 bg-black/50" @click="mobileMenuOpen = false"></div>
+    <div class="absolute inset-0 bg-black/70" @click="mobileMenuOpen = false"></div>
 
-        <div class="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-white p-6 overflow-y-auto">
+    <!-- CHANGE HERE -->
+    <div class="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-[#1a1a1a] p-6 overflow-y-auto text-white">
 
-            <!-- HEADER -->
-            <div class="flex justify-between items-center mb-6">
-                <img src="/imgs/logo.webp" class="h-10 brightness-0">
-                <button @click="mobileMenuOpen = false" class="text-xl">✕</button>
-            </div>
-
-            <!-- LINKS -->
-            <a href="/index.html" class="block py-3 border-b text-base">Home</a>
-            <a href="/pages/about.html" class="block py-3 border-b text-base">About</a>
-            <!-- DROPDOWN -->
-            <div x-data="{ open: false }">
-                <button @click="open = !open" class="flex justify-between w-full py-3 border-b text-base">
-                    Concerns
-                    <span>▼</span>
-                </button>
-
-                <div x-show="open" class="pl-4">
-                    <a href="/pages/skin.html" class="block py-2">Skin</a>
-                    <a href="/pages/anti-aging.html" class="block py-2">Anti Ageing</a>
-                    <a href="/pages/hair.html" class="block py-2">Hair</a>
-                    <a href="/pages/body.html" class="block py-2">Body</a>
-                    <a href="/pages/men.html" class="block py-2">Men</a>
-                </div>
-            </div>
-
-            <a href="/pages/tretment.html" class="block py-3 border-b">Treatments</a>
-            <a href="/pages/suplyment.html" class="block py-3 border-b">Supplements</a>
-            <a href="/pages/blog.html" class="block py-3 border-b">Blog</a>
-            <a href="/pages/service.html" class="block py-3 border-b">Services</a>
-            <a href="/pages/contact.html" class="block py-3 border-b">Contact</a>
-
+        <!-- HEADER -->
+        <div class="flex justify-between items-center mb-6">
+<img src="/imgs/logo.webp" class="h-10"
+     style="filter: brightness(0) saturate(100%) invert(78%) sepia(35%) saturate(600%) hue-rotate(5deg);">            <button @click="mobileMenuOpen = false" class="text-xl">✕</button>
         </div>
-    </div>
 
+        <!-- LINKS -->
+        <a href="/index.html" class="block py-3 border-b border-gray-700">Home</a>
+        <a href="/pages/about.html" class="block py-3 border-b border-gray-700">About</a>
+
+        <!-- DROPDOWN -->
+        <div x-data="{ open: false }">
+            <button @click="open = !open" class="flex justify-between w-full py-3 border-b border-gray-700">
+                Concerns
+                <span>▼</span>
+            </button>
+
+            <div x-show="open" class="pl-4">
+                <a href="/pages/skin.html" class="block py-2">Skin</a>
+                <a href="/pages/anti-aging.html" class="block py-2">Anti Ageing</a>
+                <a href="/pages/hair.html" class="block py-2">Hair</a>
+                <a href="/pages/body.html" class="block py-2">Body</a>
+                <a href="/pages/men.html" class="block py-2">Men</a>
+            </div>
+        </div>
+
+        <a href="/pages/tretment.html" class="block py-3 border-b border-gray-700">Treatments</a>
+        <a href="/pages/suplyment.html" class="block py-3 border-b border-gray-700">Supplements</a>
+        <a href="/pages/blog.html" class="block py-3 border-b border-gray-700">Blog</a>
+        <a href="/pages/service.html" class="block py-3 border-b border-gray-700">Services</a>
+        <a href="/pages/contact.html" class="block py-3 border-b border-gray-700">Contact</a>
+
+    </div>
+</div>
 </header>
+
 
   <section class="relative min-h-[80vh] flex items-center overflow-hidden">
 
@@ -154,112 +158,129 @@
              class="w-full h-full object-cover" 
              alt="Men's Care">
 
-        <!-- LIGHT OVERLAY -->
-        <div class="absolute inset-0 bg-black/30"></div>
+        <!-- DARK OVERLAY -->
+        <div class="absolute inset-0 bg-black/60"></div>
     </div>
     
     <!-- CONTENT -->
-    <div class="container mx-auto px-6 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <div class="max-w-2xl">
 
             <!-- TAG -->
-            <span class="text-white/80 font-semibold tracking-[0.3em] uppercase text-sm mb-4 block">
+            <span class="text-[#D4AF37] font-semibold tracking-[0.3em] uppercase text-sm mb-4 block">
                 Exclusive for Men
             </span>
 
             <!-- HEADING -->
-            <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-8">
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight mb-8">
                 Modern Care for the 
-                <span class="text-[#ffdede]">Modern Man</span>
+                <span class="text-[#D4AF37]">Modern Man</span>
             </h1>
 
             <!-- TEXT -->
-            <p class="text-white/90 text-lg mb-10 leading-relaxed">
+            <p class="text-gray-200 text-lg mb-10 leading-relaxed">
                 Men's skin aur hair ki problems alag hoti hain. Payein specialized treatments 
                 jo sirf mardon ki zarurat ko dhyan mein rakh kar banaye gaye hain.
             </p>
 
             <!-- BUTTON -->
             <div class="flex gap-4">
-                <button class="bg-[#c97c74] hover:bg-[#b86b64] text-white px-10 py-4 rounded-full font-semibold shadow-lg transition">
+                <a href="#" 
+                   class="bg-[#D4AF37] hover:bg-[#C9A227] text-black px-10 py-4 rounded-full font-semibold shadow-lg transition">
                     Book Men's Special
-                </button>
+                </a>
             </div>
 
         </div>
     </div>
 
-</section>
+    <!-- GOLD DIVIDER -->
+    <div class="absolute bottom-0 left-0 w-full h-[2px] 
+                bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent">
+    </div>
 
-   <section class="py-24 bg-[#fff7f6]">
-    <div class="container mx-auto px-6">
+</section>
+  <section class="py-24 bg-[#0b0b0b] border-t border-[#D4AF37]/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
         <!-- HEADING -->
-        <h2 class="text-4xl font-bold text-gray-900 mb-16 text-center">
-            Specialized <span class="text-[#c97c74]">Services</span>
+        <h2 class="text-4xl font-bold text-white mb-16 text-center">
+            Specialized <span class="text-[#D4AF37]">Services</span>
         </h2>
 
         <!-- CARDS -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
             <!-- CARD -->
-            <div class="bg-white p-10 rounded-[2.5rem] border border-[#f1d5d2] shadow-md hover:shadow-2xl transition duration-500 hover:-translate-y-1">
-                
-                <div class="w-16 h-16 bg-[#fbeeee] text-[#c97c74] rounded-2xl flex items-center justify-center text-3xl mb-8">
+            <div class="bg-[#1c1c1c] p-10 rounded-[2.5rem] 
+                        border border-[#D4AF37]/20 
+                        shadow-[0_15px_40px_rgba(0,0,0,0.8)] 
+                        transition duration-500">
+
+                <div class="w-16 h-16 bg-[#D4AF37]/10 text-[#D4AF37] 
+                            rounded-2xl flex items-center justify-center text-3xl mb-8">
                     🧔‍♂️
                 </div>
 
-                <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+                <h3 class="text-2xl font-semibold text-white mb-4">
                     Hair & Beard Growth
                 </h3>
 
-                <p class="text-gray-500 text-sm mb-6">
+                <p class="text-gray-400 text-sm mb-6">
                     Patchy beard aur receding hairline ke liye advanced PRP aur hair regrowth treatments.
                 </p>
 
-                <a href="#" class="text-[#c97c74] font-semibold text-sm">
+                <a href="#" class="text-[#D4AF37] font-semibold text-sm">
                     View Treatment →
                 </a>
 
             </div>
 
             <!-- CARD -->
-            <div class="bg-white p-10 rounded-[2.5rem] border border-[#f1d5d2] shadow-md hover:shadow-2xl transition duration-500 hover:-translate-y-1">
-                
-                <div class="w-16 h-16 bg-[#fbeeee] text-[#c97c74] rounded-2xl flex items-center justify-center text-3xl mb-8">
+            <div class="bg-[#1c1c1c] p-10 rounded-[2.5rem] 
+                        border border-[#D4AF37]/20 
+                        shadow-[0_15px_40px_rgba(0,0,0,0.8)] 
+                        transition duration-500">
+
+                <div class="w-16 h-16 bg-[#D4AF37]/10 text-[#D4AF37] 
+                            rounded-2xl flex items-center justify-center text-3xl mb-8">
                     🧼
                 </div>
 
-                <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+                <h3 class="text-2xl font-semibold text-white mb-4">
                     Medical Clean-up
                 </h3>
 
-                <p class="text-gray-500 text-sm mb-6">
+                <p class="text-gray-400 text-sm mb-6">
                     Deep pore cleaning aur oil control treatments jo mardon ki thick skin ke liye design kiye gaye hain.
                 </p>
 
-                <a href="#" class="text-[#c97c74] font-semibold text-sm">
+                <a href="#" class="text-[#D4AF37] font-semibold text-sm">
                     View Treatment →
                 </a>
 
             </div>
 
             <!-- CARD -->
-            <div class="bg-white p-10 rounded-[2.5rem] border border-[#f1d5d2] shadow-md hover:shadow-2xl transition duration-500 hover:-translate-y-1">
-                
-                <div class="w-16 h-16 bg-[#fbeeee] text-[#c97c74] rounded-2xl flex items-center justify-center text-3xl mb-8">
+            <div class="bg-[#1c1c1c] p-10 rounded-[2.5rem] 
+                        border border-[#D4AF37]/20 
+                        shadow-[0_15px_40px_rgba(0,0,0,0.8)] 
+                        transition duration-500">
+
+                <div class="w-16 h-16 bg-[#D4AF37]/10 text-[#D4AF37] 
+                            rounded-2xl flex items-center justify-center text-3xl mb-8">
                     ⚡
                 </div>
 
-                <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+                <h3 class="text-2xl font-semibold text-white mb-4">
                     Beard Shaping Laser
                 </h3>
 
-                <p class="text-gray-500 text-sm mb-6">
+                <p class="text-gray-400 text-sm mb-6">
                     Permanent beard shaping aur chest/back hair removal bina kisi pain ke.
                 </p>
 
-                <a href="#" class="text-[#c97c74] font-semibold text-sm">
+                <a href="#" class="text-[#D4AF37] font-semibold text-sm">
                     View Treatment →
                 </a>
 
@@ -267,40 +288,60 @@
 
         </div>
 
+        <!-- GOLD DIVIDER -->
+        <div class="mt-20 h-[2px] w-full 
+                    bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent">
+        </div>
+
     </div>
 </section>
-   <section class="py-20 bg-[#fff7f6] overflow-hidden">
-    <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+  <section class="py-20 bg-[#0b0b0b] overflow-hidden border-t border-[#D4AF37]/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
         <!-- TEXT -->
         <div>
 
-            <h2 class="text-4xl font-bold text-gray-900 mb-8 leading-tight">
-                Mardon ki skin alag <span class="text-[#c97c74]">kyu hoti hai?</span>
+            <h2 class="text-4xl font-bold text-white mb-8 leading-tight">
+                Mardon ki skin alag <span class="text-[#D4AF37]">kyu hoti hai?</span>
             </h2>
 
             <ul class="space-y-6">
 
-                <li class="flex items-start gap-4">
-                    <span class="bg-[#fbeeee] text-[#c97c74] p-2 rounded-lg">✔</span>
-                    <p class="text-gray-600">
-                        <strong class="text-gray-900">Thicker Skin:</strong> 
+                <!-- ITEM -->
+                <li class="flex items-start gap-4 p-4 rounded-2xl 
+                           bg-[#1c1c1c] border border-[#D4AF37]/20 
+                           shadow-[0_10px_30px_rgba(0,0,0,0.7)]">
+
+                    <span class="bg-[#D4AF37]/10 text-[#D4AF37] p-2 rounded-lg">✔</span>
+
+                    <p class="text-gray-400">
+                        <strong class="text-white">Thicker Skin:</strong> 
                         Mardon ki skin 25% zyada thick hoti hai, isliye isse heavy-duty care chahiye.
                     </p>
                 </li>
 
-                <li class="flex items-start gap-4">
-                    <span class="bg-[#fbeeee] text-[#c97c74] p-2 rounded-lg">✔</span>
-                    <p class="text-gray-600">
-                        <strong class="text-gray-900">More Oil:</strong> 
+                <!-- ITEM -->
+                <li class="flex items-start gap-4 p-4 rounded-2xl 
+                           bg-[#1c1c1c] border border-[#D4AF37]/20 
+                           shadow-[0_10px_30px_rgba(0,0,0,0.7)]">
+
+                    <span class="bg-[#D4AF37]/10 text-[#D4AF37] p-2 rounded-lg">✔</span>
+
+                    <p class="text-gray-400">
+                        <strong class="text-white">More Oil:</strong> 
                         Testosterone ki wajah se zyada oil aur bade pores hote hain, jo acne paida karte hain.
                     </p>
                 </li>
 
-                <li class="flex items-start gap-4">
-                    <span class="bg-[#fbeeee] text-[#c97c74] p-2 rounded-lg">✔</span>
-                    <p class="text-gray-600">
-                        <strong class="text-gray-900">Shaving Irritation:</strong> 
+                <!-- ITEM -->
+                <li class="flex items-start gap-4 p-4 rounded-2xl 
+                           bg-[#1c1c1c] border border-[#D4AF37]/20 
+                           shadow-[0_10px_30px_rgba(0,0,0,0.7)]">
+
+                    <span class="bg-[#D4AF37]/10 text-[#D4AF37] p-2 rounded-lg">✔</span>
+
+                    <p class="text-gray-400">
+                        <strong class="text-white">Shaving Irritation:</strong> 
                         Rozana shaving se skin sensitive ho jati hai aur ingrown hair ki problem hoti hai.
                     </p>
                 </li>
@@ -313,71 +354,100 @@
         <div class="relative">
 
             <img src="/imgs/men-about.webp" 
-                 class="rounded-[3rem] shadow-xl grayscale hover:grayscale-0 transition duration-700 border border-[#f1d5d2]" 
+                 class="w-full rounded-[2.5rem] 
+                        shadow-[0_25px_70px_rgba(0,0,0,0.9)] 
+                        border border-[#D4AF37]/20 
+                        grayscale hover:grayscale-0 transition duration-700" 
                  alt="Specialist Care">
 
         </div>
 
     </div>
+
+    <!-- GOLD DIVIDER -->
+    <div class="mt-20 h-[2px] w-full 
+                bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent">
+    </div>
+
 </section>
-  <section class="py-24 bg-[#fff7f6]">
-    <div class="container mx-auto px-6 text-center">
+  <section class="py-24 bg-[#0b0b0b] border-t border-[#D4AF37]/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
 
         <!-- HEADING -->
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-16">
-            Men's Daily <span class="text-[#c97c74]">Essentials</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-16">
+            Men's Daily <span class="text-[#D4AF37]">Essentials</span>
         </h2>
 
         <!-- GRID -->
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
 
             <!-- CARD -->
-            <div class="p-6 bg-white rounded-3xl border border-[#f1d5d2] shadow-md hover:shadow-xl transition duration-500 hover:-translate-y-1">
-                
-                <div class="h-40 bg-[#fbeeee] rounded-2xl mb-4 flex items-center justify-center text-[#c97c74] text-2xl">
+            <div class="p-6 bg-[#1c1c1c] rounded-[2rem] 
+                        border border-[#D4AF37]/20 
+                        shadow-[0_15px_40px_rgba(0,0,0,0.8)] 
+                        transition duration-500">
+
+                <div class="h-40 bg-[#D4AF37]/10 rounded-2xl mb-4 
+                            flex items-center justify-center 
+                            text-[#D4AF37] text-2xl">
                     🧴
                 </div>
 
-                <h4 class="font-semibold text-gray-900">
+                <h4 class="font-semibold text-white">
                     Oil Control Wash
                 </h4>
 
             </div>
 
             <!-- CARD -->
-            <div class="p-6 bg-white rounded-3xl border border-[#f1d5d2] shadow-md hover:shadow-xl transition duration-500 hover:-translate-y-1">
-                
-                <div class="h-40 bg-[#fbeeee] rounded-2xl mb-4 flex items-center justify-center text-[#c97c74] text-2xl">
+            <div class="p-6 bg-[#1c1c1c] rounded-[2rem] 
+                        border border-[#D4AF37]/20 
+                        shadow-[0_15px_40px_rgba(0,0,0,0.8)] 
+                        transition duration-500">
+
+                <div class="h-40 bg-[#D4AF37]/10 rounded-2xl mb-4 
+                            flex items-center justify-center 
+                            text-[#D4AF37] text-2xl">
                     💊
                 </div>
 
-                <h4 class="font-semibold text-gray-900">
+                <h4 class="font-semibold text-white">
                     Minoxidil Booster
                 </h4>
 
             </div>
 
             <!-- CARD -->
-            <div class="p-6 bg-white rounded-3xl border border-[#f1d5d2] shadow-md hover:shadow-xl transition duration-500 hover:-translate-y-1">
-                
-                <div class="h-40 bg-[#fbeeee] rounded-2xl mb-4 flex items-center justify-center text-[#c97c74] text-2xl">
+            <div class="p-6 bg-[#1c1c1c] rounded-[2rem] 
+                        border border-[#D4AF37]/20 
+                        shadow-[0_15px_40px_rgba(0,0,0,0.8)] 
+                        transition duration-500">
+
+                <div class="h-40 bg-[#D4AF37]/10 rounded-2xl mb-4 
+                            flex items-center justify-center 
+                            text-[#D4AF37] text-2xl">
                     🧔
                 </div>
 
-                <h4 class="font-semibold text-gray-900">
+                <h4 class="font-semibold text-white">
                     Beard Growth Serum
                 </h4>
 
             </div>
 
             <!-- CARD -->
-            <div class="p-6 bg-white rounded-3xl border border-[#f1d5d2] shadow-md hover:shadow-xl transition duration-500 hover:-translate-y-1">
-                
-                <div class="h-40 bg-[#fbeeee] rounded-2xl mb-4 flex items-center justify-center text-[#c97c74] text-2xl">
+            <div class="p-6 bg-[#1c1c1c] rounded-[2rem] 
+                        border border-[#D4AF37]/20 
+                        shadow-[0_15px_40px_rgba(0,0,0,0.8)] 
+                        transition duration-500">
+
+                <div class="h-40 bg-[#D4AF37]/10 rounded-2xl mb-4 
+                            flex items-center justify-center 
+                            text-[#D4AF37] text-2xl">
                     ✨
                 </div>
 
-                <h4 class="font-semibold text-gray-900">
+                <h4 class="font-semibold text-white">
                     Anti-Fatigue Cream
                 </h4>
 
@@ -385,21 +455,28 @@
 
         </div>
 
+        <!-- GOLD DIVIDER -->
+        <div class="mt-20 h-[2px] w-full 
+                    bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent">
+        </div>
+
     </div>
 </section>
 
-  <section class="py-10 bg-[#fff7f6]">
-    <div class="container mx-auto px-6">
+  <section class="py-10 bg-[#0b0b0b] border-t border-[#D4AF37]/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-        <div class="bg-[#fbeeee] rounded-[2.5rem] p-10 text-center border border-[#f1d5d2] shadow-xl">
+        <div class="bg-[#1c1c1c] rounded-[2rem] p-10 text-center 
+                    border border-[#D4AF37]/20 
+                    shadow-[0_20px_60px_rgba(0,0,0,0.9)]">
 
             <!-- HEADING -->
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Upgrade Your <span class="text-[#c97c74]">Grooming Routine</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                Upgrade Your <span class="text-[#D4AF37]">Grooming Routine</span>
             </h2>
 
             <!-- TEXT -->
-            <p class="text-gray-500 mb-10 max-w-lg mx-auto">
+            <p class="text-gray-400 mb-10 max-w-lg mx-auto">
                 Hamare experts se milein aur apni skin/hair ke liye sahi rasta chuney.
             </p>
 
@@ -407,23 +484,30 @@
             <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
 
                 <!-- PHONE -->
-                <div class="flex items-center gap-3 text-gray-800 font-semibold">
-                    <span class="text-[#c97c74]">📞</span> 
+                <div class="flex items-center gap-3 text-gray-300 font-semibold">
+                    <span class="text-[#D4AF37]">📞</span> 
                     <span>+91 98765 43210</span>
                 </div>
 
                 <!-- BUTTON -->
-                <button class="bg-[#c97c74] hover:bg-[#b86b64] text-white px-10 py-4 rounded-full font-semibold shadow-md transition hover:scale-105">
+                <a href="tel:+919876543210"
+                   class="bg-[#D4AF37] hover:bg-[#C9A227] 
+                          text-black px-10 py-4 rounded-full font-semibold 
+                          shadow-lg transition active:scale-95">
                     Book Your Slot
-                </button>
+                </a>
 
             </div>
 
         </div>
 
+        <!-- GOLD DIVIDER -->
+        <div class="mt-16 h-[2px] w-full 
+                    bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent">
+        </div>
+
     </div>
 </section>
-
 <footer class="bg-[#0f172a] text-white pt-20 pb-10">
   <div class="max-w-7xl mx-auto px-6 lg:px-20">
 
@@ -442,51 +526,51 @@
         <!-- SOCIAL -->
         <div class="flex gap-4">
 
-  <!-- Twitter -->
-  <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#dba39c] transition">
-    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M22 5.8c-.7.3-1.5.5-2.2.6.8-.5 1.4-1.3 1.7-2.2-.8.5-1.7.9-2.6 1.1A3.8 3.8 0 0012 8.5c0 .3 0 .6.1.8-3.2-.2-6-1.7-7.9-4.1-.3.6-.5 1.3-.5 2 0 1.3.7 2.5 1.8 3.2-.6 0-1.2-.2-1.7-.5v.1c0 1.9 1.4 3.5 3.2 3.8-.3.1-.7.1-1 .1-.3 0-.5 0-.8-.1.5 1.5 2 2.7 3.8 2.7A7.6 7.6 0 012 19.5a10.7 10.7 0 005.8 1.7c7 0 10.8-5.8 10.8-10.8v-.5c.7-.5 1.4-1.2 1.9-2z"/>
-    </svg>
-  </a>
+          <!-- Twitter -->
+          <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#D4AF37] transition">
+            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M22 5.8c-.7.3-1.5.5-2.2.6.8-.5 1.4-1.3 1.7-2.2-.8.5-1.7.9-2.6 1.1A3.8 3.8 0 0012 8.5c0 .3 0 .6.1.8-3.2-.2-6-1.7-7.9-4.1-.3.6-.5 1.3-.5 2 0 1.3.7 2.5 1.8 3.2-.6 0-1.2-.2-1.7-.5v.1c0 1.9 1.4 3.5 3.2 3.8-.3.1-.7.1-1 .1-.3 0-.5 0-.8-.1.5 1.5 2 2.7 3.8 2.7A7.6 7.6 0 012 19.5a10.7 10.7 0 005.8 1.7c7 0 10.8-5.8 10.8-10.8v-.5c.7-.5 1.4-1.2 1.9-2z"/>
+            </svg>
+          </a>
 
-  <!-- Instagram -->
-  <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#dba39c] transition">
-    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6.5-.9a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/>
-    </svg>
-  </a>
+          <!-- Instagram -->
+          <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#D4AF37] transition">
+            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6.5-.9a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/>
+            </svg>
+          </a>
 
-  <!-- LinkedIn -->
-  <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#dba39c] transition">
-    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M6.94 6.5A2.44 2.44 0 014.5 4.06 2.44 2.44 0 016.94 1.6a2.44 2.44 0 012.44 2.46A2.44 2.44 0 016.94 6.5zM4.5 8h5v12h-5V8zm7.5 0h4.7v1.7h.1c.6-1.1 2-2.3 4-2.3 4.3 0 5.1 2.8 5.1 6.4V20h-5v-5.5c0-1.3 0-3-1.8-3-1.8 0-2.1 1.4-2.1 2.9V20h-5V8z"/>
-    </svg>
-  </a>
+          <!-- LinkedIn -->
+          <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#D4AF37] transition">
+            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M6.94 6.5A2.44 2.44 0 014.5 4.06 2.44 2.44 0 016.94 1.6a2.44 2.44 0 012.44 2.46A2.44 2.44 0 016.94 6.5zM4.5 8h5v12h-5V8zm7.5 0h4.7v1.7h.1c.6-1.1 2-2.3 4-2.3 4.3 0 5.1 2.8 5.1 6.4V20h-5v-5.5c0-1.3 0-3-1.8-3-1.8 0-2.1 1.4-2.1 2.9V20h-5V8z"/>
+            </svg>
+          </a>
 
-</div>
+        </div>
       </div>
 
       <!-- QUICK LINKS -->
       <div>
         <h4 class="text-sm uppercase tracking-widest text-gray-300 mb-6">Quick Links</h4>
-       <ul class="space-y-3 text-gray-400 text-sm">
-  <li><a href="/index.html" class="hover:text-[#c97c74] transition">Home</a></li>
-  <li><a href="/pages/tretment.html" class="hover:text-[#c97c74] transition">Treatments</a></li>
-  <li><a href="/pages/suplyment.html" class="hover:text-[#c97c74] transition">Supplements</a></li>
-  <li><a href="/pages/blog.html" class="hover:text-[#c97c74] transition">Blogs</a></li>
-</ul>
+        <ul class="space-y-3 text-gray-400 text-sm">
+          <li><a href="/index.html" class="hover:text-[#D4AF37] transition">Home</a></li>
+          <li><a href="/pages/tretment.html" class="hover:text-[#D4AF37] transition">Treatments</a></li>
+          <li><a href="/pages/suplyment.html" class="hover:text-[#D4AF37] transition">Supplements</a></li>
+          <li><a href="/pages/blog.html" class="hover:text-[#D4AF37] transition">Blogs</a></li>
+        </ul>
       </div>
 
       <!-- CONCERNS -->
       <div>
         <h4 class="text-sm uppercase tracking-widest text-gray-300 mb-6">Concerns</h4>
-       <ul class="space-y-3 text-gray-400 text-sm">
-  <li><a href="/pages/skin.html" class="hover:text-[#c97c74] transition">Skin</a></li>
-  <li><a href="/pages/anti-aging.html" class="hover:text-[#c97c74] transition">Anti Aging</a></li>
-  <li><a href="/pages/hair.html" class="hover:text-[#c97c74] transition">Hair</a></li>
-  <li><a href="/pages/body.html" class="hover:text-[#c97c74] transition">Body</a></li>
-  <li><a href="/pages/men.html" class="hover:text-[#c97c74] transition">Men’s</a></li>
-</ul>
+        <ul class="space-y-3 text-gray-400 text-sm">
+          <li><a href="/pages/skin.html" class="hover:text-[#D4AF37] transition">Skin</a></li>
+          <li><a href="/pages/anti-aging.html" class="hover:text-[#D4AF37] transition">Anti Aging</a></li>
+          <li><a href="/pages/hair.html" class="hover:text-[#D4AF37] transition">Hair</a></li>
+          <li><a href="/pages/body.html" class="hover:text-[#D4AF37] transition">Body</a></li>
+          <li><a href="/pages/men.html" class="hover:text-[#D4AF37] transition">Men’s</a></li>
+        </ul>
       </div>
 
       <!-- CONTACT -->
@@ -498,10 +582,10 @@
           Santacruz – West, Mumbai – 400054, India.
         </p>
 
-        <a href="tel:+919833055236"
-   class="text-white font-semibold text-lg hover:text-[#c97c74] transition">
-   +91 9833055236
-</a>
+        <a href="tel:+917459792556"
+           class="text-white font-semibold text-lg hover:text-[#D4AF37] transition">
+           +91 7459792556
+        </a>
       </div>
 
     </div>
@@ -510,12 +594,12 @@
     <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
 
       <p class="text-gray-500 text-sm">
-        © 2026 Dr. Rashmi Shetty. All rights reserved.
+        © 2026 Dr. sumaira. All rights reserved.
       </p>
 
       <div class="flex gap-6 text-sm text-gray-400">
-        <a href="#" class="hover:text-white">Privacy Policy</a>
-        <a href="#" class="hover:text-white">Terms of Service</a>
+        <a href="#" class="hover:text-[#D4AF37]">Privacy Policy</a>
+        <a href="#" class="hover:text-[#D4AF37]">Terms of Service</a>
       </div>
 
     </div>
