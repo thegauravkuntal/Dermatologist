@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hi-IN" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +27,7 @@
     </style>
 </head>
 <body class="bg-[#fff7f6] text-gray-800">
-   <header class="sticky top-0 z-50 bg-black shadow-md" x-data="{ mobileMenuOpen: false, activeDropdown: null }">
+    <header class="sticky top-0 z-50 bg-black shadow-md" x-data="{ mobileMenuOpen: false, activeDropdown: null }">
 
     <nav class="max-w-[1400px] mx-auto px-4 lg:px-8">
         <div class="flex items-center justify-between h-16">
@@ -74,15 +74,10 @@
                         <a href="/pages/skin.html" class="block px-4 py-2 text-sm text-white hover:bg-[#D4AF37]/20">Skin</a>
                         <a href="/pages/anti-aging.html" class="block px-4 py-2 text-sm text-white hover:bg-[#D4AF37]/20">Anti Ageing</a>
                         <a href="/pages/hair.html" class="block px-4 py-2 text-sm text-white hover:bg-[#D4AF37]/20">Hair</a>
-                        <a href="/pages/body.html" class="block px-4 py-2 text-sm text-white hover:bg-[#D4AF37]/20">Body</a>
-                        <a href="/pages/men.html" class="block px-4 py-2 text-sm text-white hover:bg-[#D4AF37]/20">Men</a>
-
                     </div>
                 </div>
 
-                <a href="/pages/tretment.html" class="px-3 py-2 text-sm font-medium text-white hover:text-[#D4AF37]">Treatments</a>
-                <a href="/pages/suplyment.html" class="px-3 py-2 text-sm font-medium text-white hover:text-[#D4AF37]">Supplements</a>
-                <a href="/pages/blog.html" class="px-3 py-2 text-sm font-medium text-white hover:text-[#D4AF37]">Blog</a>
+                <a href="/pages/treatment.html" class="px-3 py-2 text-sm font-medium text-white hover:text-[#D4AF37]">Treatments</a>
                 <a href="/pages/service.html" class="px-3 py-2 text-sm font-medium text-white hover:text-[#D4AF37]">Services</a>
 
             </div>
@@ -104,8 +99,6 @@
 
         </div>
     </nav>
-
-    <!-- MOBILE MENU -->
     <!-- MOBILE MENU -->
 <div x-show="mobileMenuOpen" x-cloak class="fixed inset-0 z-50 xl:hidden">
 
@@ -117,7 +110,8 @@
         <!-- HEADER -->
         <div class="flex justify-between items-center mb-6">
 <img src="/imgs/logo.webp" class="h-10"
-     style="filter: brightness(0) saturate(100%) invert(78%) sepia(35%) saturate(600%) hue-rotate(5deg);">            <button @click="mobileMenuOpen = false" class="text-xl">✕</button>
+     style="filter: brightness(0) saturate(100%) invert(78%) sepia(35%) saturate(600%) hue-rotate(5deg);">        
+         <button @click="mobileMenuOpen = false" class="text-xl">✕</button>
         </div>
 
         <!-- LINKS -->
@@ -135,14 +129,10 @@
                 <a href="/pages/skin.html" class="block py-2">Skin</a>
                 <a href="/pages/anti-aging.html" class="block py-2">Anti Ageing</a>
                 <a href="/pages/hair.html" class="block py-2">Hair</a>
-                <a href="/pages/body.html" class="block py-2">Body</a>
-                <a href="/pages/men.html" class="block py-2">Men</a>
             </div>
         </div>
 
-        <a href="/pages/tretment.html" class="block py-3 border-b border-gray-700">Treatments</a>
-        <a href="/pages/suplyment.html" class="block py-3 border-b border-gray-700">Supplements</a>
-        <a href="/pages/blog.html" class="block py-3 border-b border-gray-700">Blog</a>
+        <a href="/pages/treatment.html" class="block py-3 border-b border-gray-700">Treatments</a>
         <a href="/pages/service.html" class="block py-3 border-b border-gray-700">Services</a>
         <a href="/pages/contact.html" class="block py-3 border-b border-gray-700">Contact</a>
 
@@ -150,18 +140,14 @@
 </div>
 </header>
 
-
-
-
     <section class="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
 
     <!-- BACKGROUND IMAGE -->
     <div class="absolute inset-0 z-0">
         <img src="/imgs/about-hero.webp" 
-             alt="Expert Dermatology Clinic" 
+             alt="Dermatology Clinic" 
              class="w-full h-full object-cover">
 
-        <!-- LIGHT DARK OVERLAY (image dikhegi) -->
         <div class="absolute inset-0 bg-black/50"></div>
     </div>
 
@@ -183,9 +169,9 @@
                 <span class="text-[#D4AF37]">Dermatological Excellence</span>
             </h1>
 
-            <!-- TEXT -->
+            <!-- FIXED TEXT -->
             <p class="text-lg md:text-xl text-gray-200 font-medium italic max-w-2xl mx-auto leading-relaxed">
-                "Science aur empathy ka mel, jo aapki skin ko de ek naya vishwas."
+                "A blend of science and empathy that brings confidence to your skin."
             </p>
 
             <!-- GOLD LINE -->
@@ -214,15 +200,6 @@
 
 </section>
 
-
-
-
-
-
-
-
-
-
   <section class="relative py-12 lg:py-24 overflow-hidden bg-[#0f0f0f] border-t border-[#D4AF37]/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
@@ -236,7 +213,7 @@
                             border border-[#D4AF37]/30">
                     
                     <img src="/imgs/rashmi.webp" 
-                         alt="Doctor"
+                         alt="Dr Sumaira Dermatologist"
                          class="w-full h-auto min-h-[400px] object-cover">
                 </div>
 
@@ -244,7 +221,6 @@
                 <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-[#D4AF37] 
                             rounded-full blur-2xl -z-10 opacity-20"></div>
             </div>
-
 
             <!-- TEXT -->
             <div class="w-full lg:w-1/2">
@@ -261,9 +237,10 @@
                     </h1>
                 </header>
 
+                <!-- FIXED TEXT -->
                 <p class="text-base md:text-lg text-gray-400 mb-8 leading-relaxed">
-                    Namaste! Main ek dedicated Dermatologist hoon jinka maksad aapki skin aur hair health ko restore karna hai. 
-                    Modern science aur clinical excellence ke saath, hum har patient ko personalized care dete hain.
+                    Dr. Sumaira is a dedicated dermatologist focused on restoring skin and hair health. 
+                    With modern science and clinical excellence, she provides personalized care for every patient.
                 </p>
 
                 <!-- QUOTE BOX -->
@@ -280,7 +257,7 @@
 
         </div>
 
-        <!-- 🔥 VISIBLE GOLD DIVIDER -->
+        <!-- GOLD DIVIDER -->
         <div class="mt-20 h-[2px] w-full 
                     bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent 
                     opacity-80"></div>
@@ -300,13 +277,10 @@
                             transition duration-500 
                             relative overflow-hidden">
 
-                <!-- GOLD GLOW -->
                 <div class="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/10 to-transparent opacity-80"></div>
 
                 <h2 class="relative z-10 text-2xl md:text-3xl font-bold mb-8 flex items-center gap-3 text-[#D4AF37]">
-                    <span class="p-2 bg-[#D4AF37] rounded-lg text-black">
-                        🎓
-                    </span>
+                    <span class="p-2 bg-[#D4AF37] rounded-lg text-black">🎓</span>
                     Medical Qualification
                 </h2>
 
@@ -342,13 +316,10 @@
                             transition duration-500 
                             relative overflow-hidden">
 
-                <!-- GOLD GLOW -->
                 <div class="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/10 to-transparent opacity-80"></div>
 
                 <h2 class="relative z-10 text-2xl md:text-3xl font-bold mb-8 flex items-center gap-3 text-[#D4AF37]">
-                    <span class="p-2 bg-[#D4AF37] rounded-lg text-black">
-                        💼
-                    </span>
+                    <span class="p-2 bg-[#D4AF37] rounded-lg text-black">💼</span>
                     Clinical Experience
                 </h2>
 
@@ -361,11 +332,10 @@
                         </span>
                     </div>
 
+                    <!-- FIXED TEXT -->
                     <p class="text-gray-300 leading-relaxed border-t border-[#D4AF37]/20 pt-4">
-                        Pichle ek dashak se humne 
-                        <span class="text-white font-semibold">City Skin Hospital</span> aur 
-                        <span class="text-white font-semibold">International Aesthetics Center</span> jaise bade sansthano mein 
-                        5,000+ successful cases handle kiye hain.
+                        With over a decade of experience, Dr. Sumaira has successfully treated more than 
+                        <span class="text-white font-semibold">5,000 patients</span> across leading clinics and aesthetic centers.
                     </p>
 
                 </div>
@@ -373,7 +343,6 @@
 
         </div>
 
-        <!-- 🔥 STRONG GOLD DIVIDER -->
         <div class="mt-20 h-[2px] w-full 
                     bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent 
                     opacity-90"></div>
@@ -381,14 +350,7 @@
     </div>
 </section>
 
-
-
-
-
-
-
-
-  <section class="py-16 bg-[#0f0f0f] border-t border-[#D4AF37]/10">
+ <section class="py-16 bg-[#0f0f0f] border-t border-[#D4AF37]/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
         <div class="flex flex-col md:flex-row gap-6">
@@ -402,7 +364,6 @@
                         transition duration-500 
                         relative overflow-hidden">
 
-                <!-- GOLD GLOW -->
                 <div class="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/10 to-transparent opacity-80"></div>
 
                 <h2 class="relative z-10 text-3xl font-extrabold mb-6 text-[#D4AF37]">
@@ -410,7 +371,7 @@
                 </h2>
 
                 <p class="relative z-10 text-gray-300 leading-relaxed italic">
-                    "Har patient ko high-quality aur ethical skin care provide karna, bina kisi compromise ke."
+                    "To provide high-quality and ethical skincare without compromise for every patient."
                 </p>
 
             </div>
@@ -424,7 +385,6 @@
                         transition duration-500 
                         relative overflow-hidden">
 
-                <!-- GOLD GLOW -->
                 <div class="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/10 to-transparent opacity-80"></div>
 
                 <h2 class="relative z-10 text-3xl font-extrabold mb-6 text-[#D4AF37]">
@@ -432,32 +392,19 @@
                 </h2>
 
                 <p class="relative z-10 text-gray-300 leading-relaxed italic">
-                    "Dermatology mein bharosa aur innovation ka naya benchmark set karna."
+                    "To set new benchmarks in dermatology through trust, innovation, and advanced care."
                 </p>
 
             </div>
 
         </div>
 
-        <!-- 🔥 STRONG GOLD DIVIDER -->
         <div class="mt-20 h-[2px] w-full 
                     bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent 
                     opacity-90"></div>
 
     </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
 
     <section class="py-16 lg:py-24 bg-[#0b0b0b] border-t border-[#D4AF37]/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
@@ -484,7 +431,7 @@
                 </h3>
 
                 <p class="relative z-10 text-gray-300 text-sm font-medium">
-                    Life Member of Indian Association of Dermatologists
+                    Life Member, Indian Association of Dermatologists, Venereologists & Leprologists
                 </p>
             </div>
 
@@ -502,7 +449,7 @@
                 </h3>
 
                 <p class="relative z-10 text-gray-300 text-sm font-medium">
-                    Cosmetic Society of India - Certified Expert
+                    Member of Cosmetic Society of India
                 </p>
             </div>
 
@@ -520,13 +467,13 @@
                 </h3>
 
                 <p class="relative z-10 text-gray-300 text-sm font-medium">
-                    Recognized Medical Aesthetic Specialist
+                    Board-Certified Medical Aesthetic Specialist
                 </p>
             </div>
 
         </div>
 
-        <!-- 🔥 GOLD DIVIDER -->
+        <!-- GOLD DIVIDER -->
         <div class="mt-20 h-[2px] w-full 
                     bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent 
                     opacity-80"></div>
@@ -534,17 +481,15 @@
     </div>
 </section>
 
-
 <!-- 🔥 MOBILE CTA -->
 <div class="fixed bottom-0 left-0 right-0 p-4 lg:hidden z-50">
-    <a href="tel:+910000000000" 
+    <a href="tel:+917827752896" 
        class="block w-full bg-[#D4AF37] text-black text-center py-4 rounded-2xl 
               font-bold shadow-[0_10px_30px_rgba(212,175,55,0.4)] 
               hover:bg-[#C9A227] transition">
-        📞 Book Consultation
+        📞 Call Now 
     </a>
 </div>
-
 
   <footer class="bg-[#0f172a] text-white pt-20 pb-10">
   <div class="max-w-7xl mx-auto px-6 lg:px-20">
@@ -554,7 +499,7 @@
 
       <!-- BRAND -->
       <div class="space-y-6">
-        <img src="/imgs/logo.webp" class="h-10">
+        <img src="/imgs/logo.webp" class="h-10" alt="Novae Aesthetics Logo">
 
         <p class="text-gray-400 text-sm leading-relaxed">
           Expert dermatological care focused on rejuvenating your natural beauty. 
@@ -564,22 +509,22 @@
         <!-- SOCIAL -->
         <div class="flex gap-4">
 
-          <!-- Twitter -->
           <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#D4AF37] transition">
+            <!-- Twitter -->
             <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
               <path d="M22 5.8c-.7.3-1.5.5-2.2.6.8-.5 1.4-1.3 1.7-2.2-.8.5-1.7.9-2.6 1.1A3.8 3.8 0 0012 8.5c0 .3 0 .6.1.8-3.2-.2-6-1.7-7.9-4.1-.3.6-.5 1.3-.5 2 0 1.3.7 2.5 1.8 3.2-.6 0-1.2-.2-1.7-.5v.1c0 1.9 1.4 3.5 3.2 3.8-.3.1-.7.1-1 .1-.3 0-.5 0-.8-.1.5 1.5 2 2.7 3.8 2.7A7.6 7.6 0 012 19.5a10.7 10.7 0 005.8 1.7c7 0 10.8-5.8 10.8-10.8v-.5c.7-.5 1.4-1.2 1.9-2z"/>
             </svg>
           </a>
 
-          <!-- Instagram -->
           <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#D4AF37] transition">
+            <!-- Instagram -->
             <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
               <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6.5-.9a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/>
             </svg>
           </a>
 
-          <!-- LinkedIn -->
           <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#D4AF37] transition">
+            <!-- LinkedIn -->
             <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
               <path d="M6.94 6.5A2.44 2.44 0 014.5 4.06 2.44 2.44 0 016.94 1.6a2.44 2.44 0 012.44 2.46A2.44 2.44 0 016.94 6.5zM4.5 8h5v12h-5V8zm7.5 0h4.7v1.7h.1c.6-1.1 2-2.3 4-2.3 4.3 0 5.1 2.8 5.1 6.4V20h-5v-5.5c0-1.3 0-3-1.8-3-1.8 0-2.1 1.4-2.1 2.9V20h-5V8z"/>
             </svg>
@@ -593,9 +538,7 @@
         <h4 class="text-sm uppercase tracking-widest text-gray-300 mb-6">Quick Links</h4>
         <ul class="space-y-3 text-gray-400 text-sm">
           <li><a href="/index.html" class="hover:text-[#D4AF37] transition">Home</a></li>
-          <li><a href="/pages/tretment.html" class="hover:text-[#D4AF37] transition">Treatments</a></li>
-          <li><a href="/pages/suplyment.html" class="hover:text-[#D4AF37] transition">Supplements</a></li>
-          <li><a href="/pages/blog.html" class="hover:text-[#D4AF37] transition">Blogs</a></li>
+          <li><a href="/pages/treatment.html" class="hover:text-[#D4AF37] transition">Treatments</a></li>
         </ul>
       </div>
 
@@ -606,8 +549,6 @@
           <li><a href="/pages/skin.html" class="hover:text-[#D4AF37] transition">Skin</a></li>
           <li><a href="/pages/anti-aging.html" class="hover:text-[#D4AF37] transition">Anti Aging</a></li>
           <li><a href="/pages/hair.html" class="hover:text-[#D4AF37] transition">Hair</a></li>
-          <li><a href="/pages/body.html" class="hover:text-[#D4AF37] transition">Body</a></li>
-          <li><a href="/pages/men.html" class="hover:text-[#D4AF37] transition">Men’s</a></li>
         </ul>
       </div>
 
@@ -620,9 +561,10 @@
           Santacruz – West, Mumbai – 400054, India.
         </p>
 
-        <a href="tel:+917459792556"
+        <!-- ✅ FIXED NUMBER -->
+        <a href="tel:+917827752896"
            class="text-white font-semibold text-lg hover:text-[#D4AF37] transition">
-           +91 7459792556
+           +91 7827752896
         </a>
       </div>
 
@@ -632,7 +574,7 @@
     <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
 
       <p class="text-gray-500 text-sm">
-        © 2026 Dr. sumaira. All rights reserved.
+        © 2026 Dr. Sumaira. All rights reserved.
       </p>
 
       <div class="flex gap-6 text-sm text-gray-400">
