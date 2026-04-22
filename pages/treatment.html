@@ -1,47 +1,140 @@
 <!DOCTYPE html>
 <html lang="hi-IN" class="scroll-smooth">
 <head>
+    <!-- BASIC -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Clinical Treatments | Premium Skin Care</title>
+
+    <!-- PRIMARY SEO -->
+    <title>Advanced Skin & Aesthetic Treatments in Mumbai | Dr Sumaira Clinic</title>
+
+    <meta name="description" content="Discover advanced clinical skin and aesthetic treatments in Mumbai by Dr Sumaira. विशेषज्ञ care for acne, pigmentation, anti-ageing, laser and hair restoration.">
+
+    <meta name="keywords" content="skin treatments Mumbai, aesthetic clinic Mumbai, advanced dermatology treatments, laser treatment Mumbai, anti ageing Mumbai, skin specialist Mumbai">
+
+    <meta name="author" content="Dr Sumaira">
+
+    <!-- INDEXING -->
+    <meta name="robots" content="index, follow">
+
+    <!-- CANONICAL -->
+    <link rel="canonical" href="https://yourdomain.com/treatments">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="Advanced Dermatology Treatments Mumbai | Dr Sumaira">
+    <meta property="og:description" content="Premium skin, hair and aesthetic treatments by expert dermatologist in Mumbai.">
+    <meta property="og:image" content="https://yourdomain.com/imgs/hero1.webp">
+    <meta property="og:url" content="https://yourdomain.com/treatments">
+    <meta property="og:type" content="website">
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Skin & Aesthetic Treatments Mumbai | Dr Sumaira">
+    <meta name="twitter:description" content="Advanced clinical treatments for skin, hair and anti-ageing solutions. Book now.">
+    <meta name="twitter:image" content="https://yourdomain.com/imgs/hero1.webp">
+
+    <!-- FAVICON -->
+    <link rel="icon" href="/imgs/logo.webp" type="image/webp">
+
+    <!-- FONTS + SCRIPTS -->
     <script src="https://cdn.tailwindcss.com"></script>
-            <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SCHEMA (ADVANCED TREATMENTS LIST) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "Dr Sumaira Aesthetic Clinic",
+      "url": "https://yourdomain.com/treatments",
+      "telephone": "+917827752896",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mumbai",
+        "postalCode": "400054",
+        "addressCountry": "IN"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Advanced Treatments",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "MedicalProcedure",
+              "name": "Laser Skin Treatment"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "MedicalProcedure",
+              "name": "Chemical Peel Treatment"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "MedicalProcedure",
+              "name": "Botox & Fillers"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "MedicalProcedure",
+              "name": "PRP Therapy"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "MedicalProcedure",
+              "name": "Skin Rejuvenation"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- STYLES -->
     <style>
-    body {
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        overflow-x: hidden; /* 🔥 scroll fix */
-    }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
 
-    html {
-        overflow-x: hidden; /* extra safety */
-    }
+        html {
+            overflow-x: hidden;
+        }
 
-    [x-cloak] {
-        display: none !important;
-    }
+        [x-cloak] {
+            display: none !important;
+        }
 
-    .premium-card { 
-        background: white;
-        border: 1px solid #f1d5d2;
-        box-shadow: 0 10px 30px rgba(201,124,116,0.15);
-        transition: 0.4s;
-    }
+        .premium-card { 
+            background: white;
+            border: 1px solid #f1d5d2;
+            box-shadow: 0 10px 30px rgba(201,124,116,0.15);
+            transition: 0.4s;
+        }
 
-    .premium-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 50px rgba(201,124,116,0.25);
-    }
+        .premium-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(201,124,116,0.25);
+        }
 
-    .logo-fix {
-        height: 60px;
-        width: auto;
-        object-fit: contain;
-        filter: brightness(0);
-        transform: scale(1.2);
-        transform-origin: left center;
-    }
-</style>
+        .logo-fix {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0);
+            transform: scale(1.2);
+            transform-origin: left center;
+        }
+    </style>
 </head>
 <body class="bg-[#fff7f6] text-gray-800 overflow-x-hidden ">
  <header class="fixed top-0 left-0 w-full z-50 bg-black shadow-md" x-data="{ mobileMenuOpen: false, activeDropdown: null }">
