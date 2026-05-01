@@ -89,59 +89,22 @@
     </style>
 </head>
 <body class="bg-[#fff7f6] text-gray-800">
-    <header class="sticky top-0 z-50 bg-black shadow-md" x-data="{ mobileMenuOpen: false, activeDropdown: null }">
+ <header class="sticky top-0 z-50 bg-black shadow-md" x-data="{ mobileMenuOpen: false }">
 
     <nav class="max-w-[1400px] mx-auto px-4 lg:px-8">
         <div class="flex items-center justify-between h-16">
 
-            <!-- LOGO -->
-            <a href="/" class="flex items-center overflow-hidden">
-              <img src="/imgs/logo.webp"
-     class="h-14 w-auto object-contain scale-125 origin-left"
-     style="filter: brightness(0) saturate(100%) invert(78%) sepia(35%) saturate(600%) hue-rotate(5deg);"
-     alt="Logo">
+            <!-- TEXT LOGO -->
+            <a href="/" class="text-white text-xl md:text-2xl font-light tracking-widest">
+                Novae <span class="text-[#D4AF37] font-semibold">Aesthetics</span>
             </a>
 
             <!-- DESKTOP MENU -->
-            <div class="hidden xl:flex items-center space-x-3">
+            <div class="hidden xl:flex items-center space-x-4">
 
                 <a href="/index.html" class="px-3 py-2 text-sm font-medium text-white hover:text-[#D4AF37]">Home</a>
                 <a href="/pages/about.html" class="px-3 py-2 text-sm font-medium text-white hover:text-[#D4AF37]">About</a>
-
-                <!-- DROPDOWN -->
-                <div class="relative" @mouseenter="activeDropdown = 'concerns'" @mouseleave="activeDropdown = null">
-
-                   <button class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-white hover:text-[#D4AF37]">
-    Concerns
-
-    <svg 
-        class="w-5 h-5 transition-transform duration-200"
-        :class="activeDropdown === 'concerns' ? 'rotate-180' : ''"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24">
-
-        <path 
-            stroke-linecap="round" 
-            stroke-linejoin="round" 
-            stroke-width="2" 
-            d="M19 9l-7 7-7-7" />
-
-    </svg>
-</button>
-
-                    <div x-show="activeDropdown === 'concerns'" x-cloak
-                         class="absolute left-0 top-full mt-1 w-52 bg-black rounded-lg shadow-lg py-2">
-
-                        <a href="/pages/skin.html" class="block px-4 py-2 text-sm text-white hover:bg-[#D4AF37]/20">Skin</a>
-                        <a href="/pages/anti-aging.html" class="block px-4 py-2 text-sm text-white hover:bg-[#D4AF37]/20">Anti Ageing</a>
-                        <a href="/pages/hair.html" class="block px-4 py-2 text-sm text-white hover:bg-[#D4AF37]/20">Hair</a>
-                    </div>
-                </div>
-
                 <a href="/pages/treatment.html" class="px-3 py-2 text-sm font-medium text-white hover:text-[#D4AF37]">Treatments</a>
-                <a href="/pages/service.html" class="px-3 py-2 text-sm font-medium text-white hover:text-[#D4AF37]">Services</a>
-
             </div>
 
             <!-- CONTACT -->
@@ -161,45 +124,30 @@
 
         </div>
     </nav>
+
     <!-- MOBILE MENU -->
-<div x-show="mobileMenuOpen" x-cloak class="fixed inset-0 z-50 xl:hidden">
+    <div x-show="mobileMenuOpen" x-cloak class="fixed inset-0 z-50 xl:hidden">
 
-    <div class="absolute inset-0 bg-black/70" @click="mobileMenuOpen = false"></div>
+        <div class="absolute inset-0 bg-black/70" @click="mobileMenuOpen = false"></div>
 
-    <!-- CHANGE HERE -->
-    <div class="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-[#1a1a1a] p-6 overflow-y-auto text-white">
+        <div class="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-[#1a1a1a] p-6 overflow-y-auto text-white">
 
-        <!-- HEADER -->
-        <div class="flex justify-between items-center mb-6">
-<img src="/imgs/logo.webp" class="h-10"
-     style="filter: brightness(0) saturate(100%) invert(78%) sepia(35%) saturate(600%) hue-rotate(5deg);">        
-         <button @click="mobileMenuOpen = false" class="text-xl">✕</button>
-        </div>
-
-        <!-- LINKS -->
-        <a href="/index.html" class="block py-3 border-b border-gray-700">Home</a>
-        <a href="/pages/about.html" class="block py-3 border-b border-gray-700">About</a>
-
-        <!-- DROPDOWN -->
-        <div x-data="{ open: false }">
-            <button @click="open = !open" class="flex justify-between w-full py-3 border-b border-gray-700">
-                Concerns
-                <span>▼</span>
-            </button>
-
-            <div x-show="open" class="pl-4">
-                <a href="/pages/skin.html" class="block py-2">Skin</a>
-                <a href="/pages/anti-aging.html" class="block py-2">Anti Ageing</a>
-                <a href="/pages/hair.html" class="block py-2">Hair</a>
+            <!-- HEADER -->
+            <div class="flex justify-between items-center mb-6">
+                <span class="text-lg font-light tracking-widest">
+                    Novae <span class="text-[#D4AF37] font-semibold">Aesthetics</span>
+                </span>
+                <button @click="mobileMenuOpen = false" class="text-xl">✕</button>
             </div>
+
+            <!-- LINKS -->
+            <a href="/index.html" class="block py-3 border-b border-gray-700">Home</a>
+            <a href="/pages/about.html" class="block py-3 border-b border-gray-700">About</a>
+            <a href="/pages/treatment.html" class="block py-3 border-b border-gray-700">Treatments</a>
+            <a href="/pages/contact.html" class="block py-3 border-b border-gray-700">Contact</a>
+
         </div>
-
-        <a href="/pages/treatment.html" class="block py-3 border-b border-gray-700">Treatments</a>
-        <a href="/pages/service.html" class="block py-3 border-b border-gray-700">Services</a>
-        <a href="/pages/contact.html" class="block py-3 border-b border-gray-700">Contact</a>
-
     </div>
-</div>
 </header>
 
     <section class="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
@@ -262,70 +210,166 @@
 
 </section>
 
-  <section class="relative py-12 lg:py-24 overflow-hidden bg-[#0f0f0f] border-t border-[#D4AF37]/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-
-        <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
-
-            <!-- IMAGE -->
-            <div class="w-full lg:w-1/2 relative group">
-
-                <div class="relative z-10 rounded-[2rem] lg:rounded-[3rem] overflow-hidden 
-                            shadow-[0_20px_60px_rgba(0,0,0,0.8)] 
-                            border border-[#D4AF37]/30">
-                    
-                    <img src="/imgs/rashmi.webp" 
-                         alt="Dr Sumaira Dermatologist"
-                         class="w-full h-auto min-h-[400px] object-cover">
-                </div>
-
-                <!-- GOLD GLOW -->
-                <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-[#D4AF37] 
-                            rounded-full blur-2xl -z-10 opacity-20"></div>
-            </div>
-
-            <!-- TEXT -->
-            <div class="w-full lg:w-1/2">
-
-                <header>
-                    <span class="inline-block px-4 py-1.5 
-                                 bg-[#D4AF37]/10 text-[#D4AF37] 
-                                 text-xs font-bold tracking-widest uppercase rounded-full mb-4">
-                        Senior Specialist
-                    </span>
-
-                    <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-6">
-                        Dr. <span class="text-[#D4AF37]">Sumaira</span>
-                    </h1>
-                </header>
-
-                <!-- FIXED TEXT -->
-                <p class="text-base md:text-lg text-gray-400 mb-8 leading-relaxed">
-                    Dr. Sumaira is a dedicated dermatologist focused on restoring skin and hair health. 
-                    With modern science and clinical excellence, she provides personalized care for every patient.
-                </p>
-
-                <!-- QUOTE BOX -->
-                <div class="inline-flex items-center gap-4 p-5 
-                            bg-[#151515] rounded-2xl 
-                            border-l-4 border-[#D4AF37]">
-
-                    <p class="text-sm md:text-base font-semibold text-gray-300 italic">
-                        "Healthy skin is a reflection of overall wellness."
-                    </p>
-                </div>
-
-            </div>
-
+  <section class="py-24 bg-black border-b-4 border-[#D4AF37] overflow-hidden" id="about-doctor">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      
+      <!-- IMAGE SIDE -->
+      <div class="w-full lg:w-5/12 relative group">
+        
+        <div class="absolute -top-6 -left-6 w-full h-full border-2 border-[#D4AF37]/40 rounded-2xl transition-all duration-700 group-hover:top-0 group-hover:left-0"></div>
+        
+        <div class="relative z-10 rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.8)] max-w-md mx-auto">
+          <img src="/imgs/sumaira.jpg" 
+               alt="Expert Dermatology Team" 
+               class="w-full h-[500px] object-cover object-top">
         </div>
 
-        <!-- GOLD DIVIDER -->
-        <div class="mt-20 h-[2px] w-full 
-                    bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent 
-                    opacity-80"></div>
+        <!-- EXPERIENCE -->
+        <div class="absolute -bottom-10 -right-6 lg:-right-10 z-20 bg-[#111] border border-[#D4AF37]/40 p-6 rounded-xl shadow-[0_0_20px_rgba(212,175,55,0.2)] hidden md:block">
+          <p class="text-[#D4AF37] font-bold text-3xl italic">15+</p>
+          <p class="text-gray-400 text-xs font-semibold uppercase tracking-wider">Years of Combined Experience</p>
+        </div>
+      </div>
+
+      <!-- TEXT SIDE -->
+      <div class="w-full lg:w-7/12 relative">
+        
+        <div class="absolute -top-10 -left-10 text-[120px] font-bold text-[#D4AF37]/10 select-none pointer-events-none z-0">
+          Experts
+        </div>
+
+        <div class="relative z-10">
+          
+          <span class="text-[#D4AF37] font-bold tracking-[0.2em] text-sm uppercase mb-4 block">
+            Dermatology & Aesthetic Medicine
+          </span>
+
+          <h2 class="text-4xl md:text-5xl font-light text-white mb-4 italic">
+            Meet Our
+          </h2>
+
+          <h3 class="text-5xl md:text-6xl font-bold text-white mb-8 tracking-tight">
+            Expert <span class="text-[#D4AF37]">Doctors</span>
+          </h3>
+
+          <div class="space-y-6 text-gray-300 leading-relaxed text-lg">
+            
+            <p>
+              Our clinic is led by a team of highly qualified dermatologists and aesthetic experts with extensive clinical experience across international healthcare systems.
+            </p>
+
+            <p>
+              We combine medical dermatology with advanced aesthetic treatments, delivering results that are both scientifically precise and naturally beautiful.
+            </p>
+
+            <p>
+              Our expertise includes injectables, skin rejuvenation, anti-ageing treatments, and medical-grade skin therapies using the latest technologies and evidence-based protocols.
+            </p>
+
+            <p>
+              Our goal is to provide personalised care that enhances natural beauty, restores skin health, and delivers refined, long-lasting results.
+            </p>
+
+          </div>
+
+          <!-- SIGNATURE -->
+          <div class="mt-12 text-center sm:text-left">
+            <p class="font-serif text-3xl text-[#D4AF37]/40 select-none">
+              Expert Team
+            </p>
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">
+              Dermatology Specialists
+            </p>
+          </div>
+
+        </div>
+      </div>
 
     </div>
+  </div>
 </section>
+
+<section class="py-24 bg-black border-b-4 border-[#D4AF37] overflow-hidden" id="about-zarif">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20">
+      
+      <!-- IMAGE SIDE -->
+      <div class="w-full lg:w-5/12 relative group">
+        
+        <div class="absolute -top-6 -right-6 w-full h-full border-2 border-[#D4AF37]/40 rounded-2xl transition-all duration-700 group-hover:top-0 group-hover:right-0"></div>
+        
+        <div class="relative z-10 rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.8)]">
+          <img src="/imgs/zarif.jpg" 
+               alt="Aesthetic Specialists Team" 
+               class="w-full h-auto object-cover">
+        </div>
+
+        <!-- EXPERIENCE -->
+        <div class="absolute -bottom-10 -left-6 lg:-left-10 z-20 bg-[#111] border border-[#D4AF37]/40 p-6 rounded-xl shadow-[0_0_20px_rgba(212,175,55,0.2)] hidden md:block">
+          <p class="text-[#D4AF37] font-bold text-3xl italic">Expert</p>
+          <p class="text-gray-400 text-xs font-semibold uppercase tracking-wider">Clinical Experience</p>
+        </div>
+      </div>
+
+      <!-- TEXT SIDE -->
+      <div class="w-full lg:w-7/12 relative">
+        
+        <div class="absolute -top-10 -right-10 text-[120px] font-bold text-[#D4AF37]/10 select-none pointer-events-none z-0">
+          Care
+        </div>
+
+        <div class="relative z-10">
+          
+          <span class="text-[#D4AF37] font-bold tracking-[0.2em] text-sm uppercase mb-4 block">
+            Aesthetic Medicine Experts
+          </span>
+
+          <h2 class="text-4xl md:text-5xl font-light text-white mb-2 italic">
+            Meet Our
+          </h2>
+
+          <h3 class="text-5xl md:text-6xl font-bold text-white mb-8 tracking-tight">
+            Aesthetic <span class="text-[#D4AF37]">Specialists</span>
+          </h3>
+
+          <div class="space-y-6 text-gray-300 leading-relaxed text-lg">
+            
+            <p>
+              Our aesthetic specialists are medically trained professionals dedicated to delivering safe and effective treatments with a patient-first approach.
+            </p>
+
+            <p>
+              With expertise in modern aesthetic procedures, our team focuses on subtle, natural enhancements that complement your unique features.
+            </p>
+
+            <p>
+              Every treatment is carefully planned to ensure safety, comfort, and visible results using the latest techniques and technology.
+            </p>
+
+            <p>
+              Our goal is to create a welcoming environment where every patient feels confident, informed, and cared for throughout their journey.
+            </p>
+
+          </div>
+
+          <!-- SIGNATURE -->
+          <div class="mt-12 text-center sm:text-left">
+            <p class="font-serif text-3xl text-[#D4AF37]/40 select-none">
+              Specialist Team
+            </p>
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">
+              Aesthetic Experts
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
    <section class="py-16 bg-[#111111] border-t border-[#D4AF37]/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">

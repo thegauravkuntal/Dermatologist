@@ -97,59 +97,22 @@
 <body class="bg-white text-slate-900">
 
 
-    <header class="sticky top-0 z-50 bg-black shadow-md" x-data="{ mobileMenuOpen: false, activeDropdown: null }">
+    <header class="sticky top-0 z-50 bg-black shadow-md" x-data="{ mobileMenuOpen: false }">
 
     <nav class="max-w-[1400px] mx-auto px-4 lg:px-8">
         <div class="flex items-center justify-between h-16">
 
-            <!-- LOGO -->
-            <a href="/" class="flex items-center overflow-hidden">
-              <img src="/imgs/logo.webp"
-     class="h-14 w-auto object-contain scale-125 origin-left"
-     style="filter: brightness(0) saturate(100%) invert(78%) sepia(35%) saturate(600%) hue-rotate(5deg);"
-     alt="Logo">
+            <!-- TEXT LOGO -->
+            <a href="/" class="text-white text-xl md:text-2xl font-light tracking-widest">
+                Novae <span class="text-[#D4AF37] font-semibold">Aesthetics</span>
             </a>
 
             <!-- DESKTOP MENU -->
-            <div class="hidden xl:flex items-center space-x-3">
+            <div class="hidden xl:flex items-center space-x-4">
 
                 <a href="/index.html" class="px-3 py-2 text-sm font-medium text-white hover:text-[#D4AF37]">Home</a>
                 <a href="/pages/about.html" class="px-3 py-2 text-sm font-medium text-white hover:text-[#D4AF37]">About</a>
-
-                <!-- DROPDOWN -->
-                <div class="relative" @mouseenter="activeDropdown = 'concerns'" @mouseleave="activeDropdown = null">
-
-                   <button class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-white hover:text-[#D4AF37]">
-    Concerns
-
-    <svg 
-        class="w-5 h-5 transition-transform duration-200"
-        :class="activeDropdown === 'concerns' ? 'rotate-180' : ''"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24">
-
-        <path 
-            stroke-linecap="round" 
-            stroke-linejoin="round" 
-            stroke-width="2" 
-            d="M19 9l-7 7-7-7" />
-
-    </svg>
-</button>
-
-                    <div x-show="activeDropdown === 'concerns'" x-cloak
-                         class="absolute left-0 top-full mt-1 w-52 bg-black rounded-lg shadow-lg py-2">
-
-                        <a href="/pages/skin.html" class="block px-4 py-2 text-sm text-white hover:bg-[#D4AF37]/20">Skin</a>
-                        <a href="/pages/anti-aging.html" class="block px-4 py-2 text-sm text-white hover:bg-[#D4AF37]/20">Anti Ageing</a>
-                        <a href="/pages/hair.html" class="block px-4 py-2 text-sm text-white hover:bg-[#D4AF37]/20">Hair</a>
-                    </div>
-                </div>
-
                 <a href="/pages/treatment.html" class="px-3 py-2 text-sm font-medium text-white hover:text-[#D4AF37]">Treatments</a>
-                <a href="/pages/service.html" class="px-3 py-2 text-sm font-medium text-white hover:text-[#D4AF37]">Services</a>
-
             </div>
 
             <!-- CONTACT -->
@@ -169,45 +132,30 @@
 
         </div>
     </nav>
+
     <!-- MOBILE MENU -->
-<div x-show="mobileMenuOpen" x-cloak class="fixed inset-0 z-50 xl:hidden">
+    <div x-show="mobileMenuOpen" x-cloak class="fixed inset-0 z-50 xl:hidden">
 
-    <div class="absolute inset-0 bg-black/70" @click="mobileMenuOpen = false"></div>
+        <div class="absolute inset-0 bg-black/70" @click="mobileMenuOpen = false"></div>
 
-    <!-- CHANGE HERE -->
-    <div class="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-[#1a1a1a] p-6 overflow-y-auto text-white">
+        <div class="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-[#1a1a1a] p-6 overflow-y-auto text-white">
 
-        <!-- HEADER -->
-        <div class="flex justify-between items-center mb-6">
-<img src="/imgs/logo.webp" class="h-10"
-     style="filter: brightness(0) saturate(100%) invert(78%) sepia(35%) saturate(600%) hue-rotate(5deg);">        
-         <button @click="mobileMenuOpen = false" class="text-xl">✕</button>
-        </div>
-
-        <!-- LINKS -->
-        <a href="/index.html" class="block py-3 border-b border-gray-700">Home</a>
-        <a href="/pages/about.html" class="block py-3 border-b border-gray-700">About</a>
-
-        <!-- DROPDOWN -->
-        <div x-data="{ open: false }">
-            <button @click="open = !open" class="flex justify-between w-full py-3 border-b border-gray-700">
-                Concerns
-                <span>▼</span>
-            </button>
-
-            <div x-show="open" class="pl-4">
-                <a href="/pages/skin.html" class="block py-2">Skin</a>
-                <a href="/pages/anti-aging.html" class="block py-2">Anti Ageing</a>
-                <a href="/pages/hair.html" class="block py-2">Hair</a>
+            <!-- HEADER -->
+            <div class="flex justify-between items-center mb-6">
+                <span class="text-lg font-light tracking-widest">
+                    Novae <span class="text-[#D4AF37] font-semibold">Aesthetics</span>
+                </span>
+                <button @click="mobileMenuOpen = false" class="text-xl">✕</button>
             </div>
+
+            <!-- LINKS -->
+            <a href="/index.html" class="block py-3 border-b border-gray-700">Home</a>
+            <a href="/pages/about.html" class="block py-3 border-b border-gray-700">About</a>
+            <a href="/pages/treatment.html" class="block py-3 border-b border-gray-700">Treatments</a>
+            <a href="/pages/contact.html" class="block py-3 border-b border-gray-700">Contact</a>
+
         </div>
-
-        <a href="/pages/treatment.html" class="block py-3 border-b border-gray-700">Treatments</a>
-        <a href="/pages/service.html" class="block py-3 border-b border-gray-700">Services</a>
-        <a href="/pages/contact.html" class="block py-3 border-b border-gray-700">Contact</a>
-
     </div>
-</div>
 </header>
 
 
@@ -224,46 +172,51 @@
 
                     <div class="space-y-8">
 
-                        <!-- ITEM -->
-                        <div class="flex items-start gap-5">
-                            <div class="bg-[#1a1a1a] p-4 rounded-2xl text-[#D4AF37]">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">...</svg>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg text-white">Clinic Address</h4>
-                                <p class="text-gray-400 mt-1 italic text-sm">
-                                    Shop No. 12, Health Plaza, Main Road, New Delhi - 110001
-                                </p>
-                            </div>
-                        </div>
+    <!-- PHONE -->
+    <div class="flex items-start gap-5">
+        <div class="bg-[#1a1a1a] p-4 rounded-2xl text-[#D4AF37]">
+            <!-- PHONE ICON -->
+            <svg xmlns="http://www.w3.org/2000/svg" 
+                 class="w-6 h-6" 
+                 fill="none" 
+                 viewBox="0 0 24 24" 
+                 stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 5a2 2 0 012-2h2.28a2 2 0 011.94 1.52l.7 2.8a2 2 0 01-.45 1.94l-1.27 1.27a16.001 16.001 0 006.586 6.586l1.27-1.27a2 2 0 011.94-.45l2.8.7A2 2 0 0119 16.72V19a2 2 0 01-2 2h-1C8.716 21 3 15.284 3 8V5z"/>
+            </svg>
+        </div>
 
-                        <!-- ITEM -->
-                        <div class="flex items-start gap-5">
-                            <div class="bg-[#1a1a1a] p-4 rounded-2xl text-[#D4AF37]">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">...</svg>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg text-white">Phone & WhatsApp</h4>
-                                <p class="text-gray-400 mt-1 italic text-sm">
-                                    +91 98765 43210
-                                </p>
-                            </div>
-                        </div>
+        <div>
+            <h4 class="font-bold text-lg text-white">Phone & WhatsApp</h4>
+            <p class="text-gray-400 mt-1 italic text-sm">
+                +91 98765 43210
+            </p>
+        </div>
+    </div>
 
-                        <!-- ITEM -->
-                        <div class="flex items-start gap-5">
-                            <div class="bg-[#1a1a1a] p-4 rounded-2xl text-[#D4AF37]">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">...</svg>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg text-white">Opening Hours</h4>
-                                <p class="text-gray-400 mt-1 italic text-sm">
-                                    Mon - Sat: 10:00 AM - 08:00 PM<br>Sunday: Closed
-                                </p>
-                            </div>
-                        </div>
+    <!-- TIME -->
+    <div class="flex items-start gap-5">
+        <div class="bg-[#1a1a1a] p-4 rounded-2xl text-[#D4AF37]">
+            <!-- CLOCK ICON -->
+            <svg xmlns="http://www.w3.org/2000/svg" 
+                 class="w-6 h-6" 
+                 fill="none" 
+                 viewBox="0 0 24 24" 
+                 stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+        </div>
 
-                    </div>
+        <div>
+            <h4 class="font-bold text-lg text-white">Opening Hours</h4>
+            <p class="text-gray-400 mt-1 italic text-sm">
+                Mon - Sat: 10:00 AM - 08:00 PM<br>Sunday: Closed
+            </p>
+        </div>
+    </div>
+
+</div>
                 </div>
 
                 <!-- MAP -->
